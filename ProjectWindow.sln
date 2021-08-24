@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPet.DataAccessLayer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPet.BusinessAccessLayer", "ShopPet.BusinessAccessLayer\ShopPet.BusinessAccessLayer.csproj", "{513422FD-CE57-4109-804F-B00F1AE307DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPetDTO", "ShopPetDTO\ShopPetDTO.csproj", "{DFC20F7A-3D41-4D91-93AD-5138F1A489D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{513422FD-CE57-4109-804F-B00F1AE307DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513422FD-CE57-4109-804F-B00F1AE307DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513422FD-CE57-4109-804F-B00F1AE307DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC20F7A-3D41-4D91-93AD-5138F1A489D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC20F7A-3D41-4D91-93AD-5138F1A489D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC20F7A-3D41-4D91-93AD-5138F1A489D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC20F7A-3D41-4D91-93AD-5138F1A489D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

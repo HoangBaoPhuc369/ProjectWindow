@@ -51,13 +51,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
+    <Compile Include="CustomerDAL.cs" />
+    <Compile Include="EmployeeDAL.cs" />
     <Compile Include="Entities\Account.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Bill.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShopPetModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopPetDTO\ShopPetDTO.csproj">
+      <Project>{dfc20f7a-3d41-4d91-93ad-5138f1a489d4}</Project>
+      <Name>ShopPetDTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

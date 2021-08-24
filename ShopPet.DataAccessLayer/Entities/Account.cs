@@ -1,4 +1,4 @@
-namespace ShopPet.DataAccessLayer
+namespace ShopPet.DataAccessLayer.Entities
 {
     using System;
     using System.Collections.Generic;

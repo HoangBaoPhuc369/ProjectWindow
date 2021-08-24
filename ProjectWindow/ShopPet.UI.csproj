@@ -146,6 +146,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\frmEmployees.datasource" />
+    <None Include="Properties\DataSources\ShopPetDTO.EmployeeDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,6 +169,10 @@
     <ProjectReference Include="..\ShopPet.DataAccessLayer\ShopPet.DataAccessLayer.csproj">
       <Project>{4787899a-fcc5-42a9-abfd-7c60e81a15da}</Project>
       <Name>ShopPet.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShopPetDTO\ShopPetDTO.csproj">
+      <Project>{dfc20f7a-3d41-4d91-93ad-5138f1a489d4}</Project>
+      <Name>ShopPetDTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

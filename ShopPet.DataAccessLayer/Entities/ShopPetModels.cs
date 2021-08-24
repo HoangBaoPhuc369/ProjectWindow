@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace ShopPet.DataAccessLayer
+namespace ShopPet.DataAccessLayer.Entities
 {
     public partial class ShopPetModels : DbContext
     {
@@ -13,6 +13,10 @@ namespace ShopPet.DataAccessLayer
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Bill> Bills { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -22,6 +26,22 @@ namespace ShopPet.DataAccessLayer
 
             modelBuilder.Entity<Account>()
                 .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.CusPhone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.EmpPhone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.EmpPass)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .Property(e => e.ProCate)
                 .IsUnicode(false);
         }
     }

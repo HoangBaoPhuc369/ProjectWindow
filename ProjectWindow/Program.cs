@@ -16,7 +16,7 @@ namespace ProjectWindow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoadingScreen());
+            Application.Run(new frmCustomers());
         }
     }
 }
