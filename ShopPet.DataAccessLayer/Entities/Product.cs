@@ -20,7 +20,7 @@ namespace ShopPet.DataAccessLayer.Entities
         [StringLength(20)]
         public string ProCate { get; set; }
 
-        public int ProPrice { get; set; }
+        public double ProPrice { get; set; }
 
         public int ProQty { get; set; }
     }

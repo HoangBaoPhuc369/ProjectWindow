@@ -25,5 +25,22 @@ namespace ShopPet.DataAccessLayer
                 return false;
             }
         }
+
+        public bool CheckEmployeeLogin(string username, string password, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                using (var dbcontext = new ShopPetModels())
+                {
+                    return dbcontext.Employees.Any(tk => tk.EmpName == username && tk.EmpPass == password);
+                }
+            }
+            catch (Exception exception)
+            {
+                error = exception.Message;
+                return false;
+            }
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using ProjectWindow.Helpers;
-using ShopPet.BusinessAccessLayer;
+﻿using ShopPet.BusinessAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,17 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
+using ShopPet.DataAccessLayer.Entities;
 
 namespace ProjectWindow
 {
     public partial class frmLogin : Form
     {
         private readonly AccountBAL _accountBAL;
-        //public event LoginSucessDelegate loginSucess;
+        ShopPetModels dbo;
+        public string User { get; set; }
         public frmLogin()
         {
             InitializeComponent();
             _accountBAL = new AccountBAL();
+            dbo = new ShopPetModels();
+        }
+
+        public frmLogin(string User)
+        {
+            InitializeComponent();
+            this.User = User;
+            dbo = new ShopPetModels();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,8 +66,12 @@ namespace ProjectWindow
                 MessageBox.Show("Please fill all information!");
                 return;
             }
+            //if (CheckData())
+            //{
+            //    Employee emp = dbo.Employees.FirstOrDefault(p => p.EmpName == this.User);
+            //}
             string error;
-            if (_accountBAL.CheckLogin(username, password, out error))
+            if (_accountBAL.CheckLogin(username, password, out error) || _accountBAL.CheckEmployeeLogin(username, password, out error))
             {
                 MessageBox.Show("Login success!");
                 //Mở form main thì ẩn form login đi
@@ -87,7 +100,17 @@ namespace ProjectWindow
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private bool CheckData()
+        {
+            Employee emp = dbo.Employees.FirstOrDefault(p => p.EmpName == this.User);
+            if (emp == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
