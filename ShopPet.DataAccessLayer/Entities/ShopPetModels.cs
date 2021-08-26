@@ -15,8 +15,10 @@ namespace ShopPet.DataAccessLayer.Entities
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Detail> Details { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -32,6 +34,12 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.CusPhone)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Customer>()
+                .HasMany(e => e.Bills)
+                .WithRequired(e => e.Customer)
+                .HasForeignKey(e => e.IDCustomer)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Employee>()
                 .Property(e => e.EmpPhone)
                 .IsUnicode(false);
@@ -40,9 +48,21 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.EmpPass)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Employee>()
+                .HasMany(e => e.Bills)
+                .WithRequired(e => e.Employee)
+                .HasForeignKey(e => e.IDEmployee)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Product>()
                 .Property(e => e.ProCate)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .HasMany(e => e.Bills)
+                .WithRequired(e => e.Product)
+                .HasForeignKey(e => e.IDEmployee)
+                .WillCascadeOnDelete(false);
         }
     }
 }

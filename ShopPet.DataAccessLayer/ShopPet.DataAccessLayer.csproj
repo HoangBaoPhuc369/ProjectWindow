@@ -51,14 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAL.cs" />
+    <Compile Include="BillDAL.cs" />
     <Compile Include="CustomerDAL.cs" />
+    <Compile Include="DetailsDAL.cs" />
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\Bill.cs" />
     <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Detail.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShopPetModels.cs" />
+    <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -22,6 +22,16 @@ namespace ShopPet.DataAccessLayer.Entities
         [StringLength(50)]
         public string EmpName { get; set; }
 
-        public int Amt { get; set; }
+        public double Total { get; set; }
+
+        public int IDCustomer { get; set; }
+
+        public int IDEmployee { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        public virtual Employee Employee { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

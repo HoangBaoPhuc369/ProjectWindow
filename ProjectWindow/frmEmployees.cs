@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShopPetDTO;
 using ShopPet.DataAccessLayer.Entities;
+using System.Security.Cryptography;
 
 namespace ProjectWindow
 {
@@ -41,7 +42,7 @@ namespace ProjectWindow
             employee.EmpName = txtEmpName.Text;
             employee.EmpAddr = txtEmpAddr.Text;
             employee.EmpPhone = txtEmpPhone.Text;
-            employee.EmpPass = txtEmpPass.Text;
+            employee.EmpPass = MD5Hash(txtEmpPass.Text);
             employee.EmpDOB = EmpDOB.Value.Date;
             if (_employeeBAL.SaveEmployee(employee, out error))
             {
@@ -62,7 +63,7 @@ namespace ProjectWindow
 
             // Chuyển giá trị lên form
             txtEmpName.Text = row.Cells[1].Value.ToString();
-            txtEmpPass.Text = row.Cells[2].Value.ToString();
+            MD5Hash(txtEmpPass.Text = row.Cells[2].Value.ToString());
             txtEmpPhone.Text = row.Cells[3].Value.ToString();
             txtEmpAddr.Text = row.Cells[4].Value.ToString();
             EmpDOB.Text = row.Cells[5].Value.ToString();
@@ -109,7 +110,7 @@ namespace ProjectWindow
                     employee.EmpName = txtEmpName.Text;
                     employee.EmpAddr = txtEmpAddr.Text;
                     employee.EmpPhone = txtEmpPhone.Text;
-                    employee.EmpPass = txtEmpPass.Text;
+                    employee.EmpPass = MD5Hash(txtEmpPass.Text);
                     employee.EmpDOB = EmpDOB.Value.Date;
                     if (_employeeBAL.EditEmployee(ID, employee, out error))
                     {
@@ -139,6 +140,27 @@ namespace ProjectWindow
             txtEmpPass.Text = "";
             txtEmpAddr.Text = "";
             txtEmpPhone.Text = "";
+        }
+
+        public string MD5Hash(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //compute hash from the bytes of text  
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //get hash result after compute it  
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //change it into 2 hexadecimal digits  
+                //for each byte  
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
         }
     }
 }

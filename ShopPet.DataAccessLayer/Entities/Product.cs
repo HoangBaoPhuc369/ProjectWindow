@@ -9,6 +9,12 @@ namespace ShopPet.DataAccessLayer.Entities
     [Table("Product")]
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            Bills = new HashSet<Bill>();
+        }
+
         [Key]
         public int ProId { get; set; }
 
@@ -23,5 +29,8 @@ namespace ShopPet.DataAccessLayer.Entities
         public double ProPrice { get; set; }
 
         public int ProQty { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bill> Bills { get; set; }
     }
 }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBAL.cs" />
+    <Compile Include="BillBAL.cs" />
     <Compile Include="CustomerBAL.cs" />
+    <Compile Include="DetailsBAL.cs" />
     <Compile Include="EmployeeBAL.cs" />
     <Compile Include="ProductBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
