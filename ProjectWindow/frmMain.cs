@@ -12,6 +12,7 @@ namespace ProjectWindow
 {
     public partial class frmMain : Form
     {
+        public string user { get; set; }
         public frmMain()
         {
             InitializeComponent();
@@ -21,7 +22,16 @@ namespace ProjectWindow
             this.pnlFormLoader.Controls.Add(frmhome);
             frmhome.Show();
         }
-
+        public frmMain(string user)
+        {
+            InitializeComponent();
+            this.pnlFormLoader.Controls.Clear();
+            frmHome frmhome = new frmHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmhome.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmhome);
+            this.user = user;
+            frmhome.Show();
+        }
         private void bntHome_Click(object sender, EventArgs e)
         {
             this.pnlFormLoader.Controls.Clear();
@@ -61,7 +71,7 @@ namespace ProjectWindow
         private void btnBilling_Click(object sender, EventArgs e)
         {
             this.pnlFormLoader.Controls.Clear();
-            frmBilling frmBill = new frmBilling() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmBilling frmBill = new frmBilling(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmBill.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmBill);
             frmBill.Show();

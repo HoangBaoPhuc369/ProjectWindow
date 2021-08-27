@@ -9,12 +9,6 @@ namespace ShopPet.DataAccessLayer.Entities
     [Table("Employee")]
     public partial class Employee
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
-        {
-            Bills = new HashSet<Bill>();
-        }
-
         [Key]
         public int EmpID { get; set; }
 
@@ -36,8 +30,5 @@ namespace ShopPet.DataAccessLayer.Entities
         [Required]
         [StringLength(50)]
         public string EmpPass { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
     }
 }

@@ -34,12 +34,6 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.CusPhone)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Customer>()
-                .HasMany(e => e.Bills)
-                .WithRequired(e => e.Customer)
-                .HasForeignKey(e => e.IDCustomer)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Employee>()
                 .Property(e => e.EmpPhone)
                 .IsUnicode(false);
@@ -48,21 +42,9 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.EmpPass)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Bills)
-                .WithRequired(e => e.Employee)
-                .HasForeignKey(e => e.IDEmployee)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Product>()
                 .Property(e => e.ProCate)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Product>()
-                .HasMany(e => e.Bills)
-                .WithRequired(e => e.Product)
-                .HasForeignKey(e => e.IDEmployee)
-                .WillCascadeOnDelete(false);
         }
     }
 }

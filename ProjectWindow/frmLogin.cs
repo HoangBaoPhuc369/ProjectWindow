@@ -16,22 +16,12 @@ namespace ProjectWindow
     public partial class frmLogin : Form
     {
         private readonly AccountBAL _accountBAL;
-        ShopPetModels dbo;
-        public string User { get; set; }
         public frmLogin()
         {
             InitializeComponent();
             _accountBAL = new AccountBAL();
-            dbo = new ShopPetModels();
         }
-
-        public frmLogin(string User)
-        {
-            InitializeComponent();
-            this.User = User;
-            dbo = new ShopPetModels();
-        }
-
+  
         private void Form1_Load(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
@@ -57,7 +47,10 @@ namespace ProjectWindow
         {
             ValidateInput(sender);
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+
+        public static string TextData;
+        
+        public void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
@@ -66,16 +59,13 @@ namespace ProjectWindow
                 MessageBox.Show("Please fill all information!");
                 return;
             }
-            //if (CheckData())
-            //{
-            //    Employee emp = dbo.Employees.FirstOrDefault(p => p.EmpName == this.User);
-            //}
+
             string error;
             if (_accountBAL.CheckLogin(username, password, out error) || _accountBAL.CheckEmployeeLogin(username, password, out error))
             {
                 MessageBox.Show("Login success!");
                 //Mở form main thì ẩn form login đi
-                frmMain frmMain = new frmMain();
+                frmMain frmMain = new frmMain(txtUsername.Text);
                 this.Visible = false;
                 frmMain.ShowDialog();
                 this.Visible = true;
@@ -103,14 +93,9 @@ namespace ProjectWindow
             Application.Exit();
         }
 
-        private bool CheckData()
+        private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-            Employee emp = dbo.Employees.FirstOrDefault(p => p.EmpName == this.User);
-            if (emp == null)
-            {
-                return false;
-            }
-            return true;
-        }
+
+        }     
     }
 }

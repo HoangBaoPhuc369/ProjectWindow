@@ -86,6 +86,7 @@ namespace ProjectWindow
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(226, 29);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsername_Validating);
             // 
             // txtPassword
@@ -226,13 +227,13 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaCheckBox chkShowPassword;
         private Guna.UI.WinForms.GunaTextBox txtPassword;
-        private Guna.UI.WinForms.GunaTextBox txtUsername;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton btnLogin;
         private Guna.UI.WinForms.GunaButton btnClose;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public Guna.UI.WinForms.GunaTextBox txtUsername;
     }
 }
 

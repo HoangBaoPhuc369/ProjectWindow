@@ -23,12 +23,12 @@ namespace ProjectWindow
             _employeeBAL = new EmployeeBAL();
             this.Load += FrmEmployees_Load;
         }
-
+      
         private void FrmEmployees_Load(object sender, EventArgs e)
         {
             LoadEmployeeList();
         }
-
+        
         private void LoadEmployeeList() 
         {
             List<EmployeeDTO> listEmployee = _employeeBAL.GetEmployees();
