@@ -118,7 +118,7 @@ namespace ProjectWindow
             {
                 DataGridViewRow row = dgvProductList.SelectedRows[0];
                 int check = int.Parse(row.Cells[3].Value.ToString());
-                if (int.Parse(txtQuanlity.Text) < check)
+                if (int.Parse(txtQuanlity.Text) <= check)
                 {
                     double totalPrice = int.Parse(txtQuanlity.Text) * double.Parse(txtPrice.Text);
                     int selectedRow = dgvDetails.Rows.Add();
@@ -195,14 +195,28 @@ namespace ProjectWindow
                         }
                     }
                     product.ProQty = checkQuanlity - dt.Quanlity;
-                    if (_productBAL.SaveProductFromBill(product, out error))
+                    if (product.ProQty > 0)
                     {
-                        LoadProduct();
+                        if (_productBAL.SaveProductFromBill(product, out error))
+                        {
+                            LoadProduct();
+                        }
+                        else
+                        {
+                            MessageBox.Show(error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show(error);
-                    }
+                        if (_productBAL.DeleteProduct(product, out error))
+                        {
+                            LoadProduct();
+                        }
+                        else
+                        {
+                            MessageBox.Show(error);
+                        }
+                    }                   
                 }
                 Clear();
                 MessageBox.Show("Bill saved");

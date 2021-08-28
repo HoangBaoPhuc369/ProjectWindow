@@ -15,7 +15,5 @@ namespace ShopPetDTO
 
         public string Address { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
-
     }
 }

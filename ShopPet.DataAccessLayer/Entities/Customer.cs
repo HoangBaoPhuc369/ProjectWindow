@@ -23,8 +23,5 @@ namespace ShopPet.DataAccessLayer.Entities
         [Required]
         [StringLength(50)]
         public string CusAddr { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime CusDOB { get; set; }
     }
 }

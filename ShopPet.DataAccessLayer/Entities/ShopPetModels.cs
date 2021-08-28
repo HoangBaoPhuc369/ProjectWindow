@@ -42,6 +42,14 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.EmpPass)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.EmpUser)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Permission)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Product>()
                 .Property(e => e.ProCate)
                 .IsUnicode(false);

@@ -33,7 +33,7 @@ namespace ShopPet.DataAccessLayer
             {
                 using (var dbcontext = new ShopPetModels())
                 {
-                    return dbcontext.Employees.Any(tk => tk.EmpName == username && tk.EmpPass == password);
+                    return dbcontext.Employees.Any(tk => tk.EmpUser == username && tk.EmpPass == password);
                 }
             }
             catch (Exception exception)

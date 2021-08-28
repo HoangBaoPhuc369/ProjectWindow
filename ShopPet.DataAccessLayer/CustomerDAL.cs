@@ -21,7 +21,6 @@ namespace ShopPet.DataAccessLayer
                                       Name = b.CusName,
                                       Phone = b.CusPhone,
                                       Address = b.CusAddr,
-                                      DateOfBirth = b.CusDOB
                                   };
                 return CustomerDTO.ToList();
             }
@@ -44,7 +43,6 @@ namespace ShopPet.DataAccessLayer
                     p.CusName = customer.CusName;
                     p.CusPhone = customer.CusPhone;
                     p.CusAddr = customer.CusAddr;
-                    p.CusDOB = customer.CusDOB;
                     dbcontext.SaveChanges();
                     return true;
                 }
@@ -112,7 +110,6 @@ namespace ShopPet.DataAccessLayer
                     p.CusName = customer.CusName;
                     p.CusPhone = customer.CusPhone;
                     p.CusAddr = customer.CusAddr;
-                    p.CusDOB = customer.CusDOB;
                     dbcontext.SaveChanges();
                     return true;
                 }

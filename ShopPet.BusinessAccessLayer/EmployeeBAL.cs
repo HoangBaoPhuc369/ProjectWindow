@@ -26,7 +26,8 @@ namespace ShopPet.BusinessAccessLayer
         public bool SaveEmployee(Employee employee, out string error)
         {
             error = string.Empty;
-            if (employee.EmpName == "" || employee.EmpPhone == "" || employee.EmpPass == "" || employee.EmpAddr == "")
+            if (employee.EmpUser == "" || employee.EmpPhone == "" || 
+                employee.EmpPass == "" || employee.EmpAddr == "" || employee.EmpUser == "" || employee.Permission == "")
             {
                 error = "\nPlease fill all information";
             }

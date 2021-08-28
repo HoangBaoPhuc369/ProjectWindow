@@ -22,6 +22,7 @@ namespace ProjectWindow
             this.pnlFormLoader.Controls.Add(frmhome);
             frmhome.Show();
         }
+        //Truyền dữ liệu qua main
         public frmMain(string user)
         {
             InitializeComponent();

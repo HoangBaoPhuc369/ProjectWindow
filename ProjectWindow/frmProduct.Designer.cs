@@ -30,7 +30,6 @@ namespace ProjectWindow
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -86,6 +85,7 @@ namespace ProjectWindow
             this.cbbCategory.BackColor = System.Drawing.Color.Transparent;
             this.cbbCategory.BaseColor = System.Drawing.Color.White;
             this.cbbCategory.BorderColor = System.Drawing.Color.Silver;
+            this.cbbCategory.BorderSize = 1;
             this.cbbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCategory.FocusedColor = System.Drawing.Color.Empty;
@@ -188,7 +188,7 @@ namespace ProjectWindow
             this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
             this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Gray;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Image = null;
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDelete.Location = new System.Drawing.Point(503, 142);
             this.btnDelete.Name = "btnDelete";
@@ -216,7 +216,7 @@ namespace ProjectWindow
             this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
             this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Gray;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnEdit.Location = new System.Drawing.Point(346, 142);
             this.btnEdit.Name = "btnEdit";
@@ -244,7 +244,7 @@ namespace ProjectWindow
             this.btnSave.FocusedColor = System.Drawing.Color.Empty;
             this.btnSave.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Gray;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(190, 142);
             this.btnSave.Name = "btnSave";
@@ -324,7 +324,7 @@ namespace ProjectWindow
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.ColumnHeadersHeight = 4;
+            this.dgvProduct.ColumnHeadersHeight = 25;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -354,7 +354,7 @@ namespace ProjectWindow
             this.dgvProduct.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgvProduct.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvProduct.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvProduct.ThemeStyle.HeaderStyle.Height = 25;
             this.dgvProduct.ThemeStyle.ReadOnly = false;
             this.dgvProduct.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvProduct.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

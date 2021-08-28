@@ -42,7 +42,6 @@ namespace ProjectWindow
             customer.CusName = txtCusName.Text;
             customer.CusPhone = txtCusPhone.Text;
             customer.CusAddr = txtCusAddr.Text;
-            customer.CusDOB = CusDOB.Value.Date;
             if (_customerBAL.SaveCustomer(customer, out error))
             {
                 MessageBox.Show("Save success!");
@@ -98,7 +97,6 @@ namespace ProjectWindow
                     customer.CusName = txtCusName.Text;
                     customer.CusPhone = txtCusPhone.Text;
                     customer.CusAddr = txtCusAddr.Text;
-                    customer.CusDOB = CusDOB.Value.Date;
                     if (_customerBAL.EditCustomer(ID, customer, out error))
                     {
                         MessageBox.Show("Edit success");
@@ -126,6 +124,7 @@ namespace ProjectWindow
             txtCusName.Text = "";
             txtCusAddr.Text = "";
             txtCusPhone.Text = "";
+            dgvListCustomer.ClearSelection();
         }
 
         private void dgvListCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,7 +136,6 @@ namespace ProjectWindow
             txtCusName.Text = row.Cells[1].Value.ToString();
             txtCusPhone.Text = row.Cells[2].Value.ToString();
             txtCusAddr.Text = row.Cells[3].Value.ToString();
-            CusDOB.Text = row.Cells[4].Value.ToString();
         }
     }
 }

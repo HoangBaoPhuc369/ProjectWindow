@@ -40,6 +40,8 @@ namespace ProjectWindow
             string error;
             Employee employee = new Employee();
             employee.EmpName = txtEmpName.Text;
+            employee.EmpUser = txtEmpUser.Text;
+            employee.Permission = cbbPermission.Text;
             employee.EmpAddr = txtEmpAddr.Text;
             employee.EmpPhone = txtEmpPhone.Text;
             employee.EmpPass = MD5Hash(txtEmpPass.Text);
@@ -63,10 +65,14 @@ namespace ProjectWindow
 
             // Chuyển giá trị lên form
             txtEmpName.Text = row.Cells[1].Value.ToString();
-            MD5Hash(txtEmpPass.Text = row.Cells[2].Value.ToString());
-            txtEmpPhone.Text = row.Cells[3].Value.ToString();
-            txtEmpAddr.Text = row.Cells[4].Value.ToString();
-            EmpDOB.Text = row.Cells[5].Value.ToString();
+            txtEmpUser.Text = row.Cells[2].Value.ToString();
+            string decryption;
+            decryption = row.Cells[3].Value.ToString();
+            txtEmpPass.Text = MD5Hash(decryption);
+            cbbPermission.Text = row.Cells[4].Value.ToString();
+            txtEmpPhone.Text = row.Cells[5].Value.ToString();
+            txtEmpAddr.Text = row.Cells[6].Value.ToString();
+            EmpDOB.Text = row.Cells[7].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,6 +114,8 @@ namespace ProjectWindow
                     // Sửa
                     Employee employee = new Employee();
                     employee.EmpName = txtEmpName.Text;
+                    employee.EmpUser = txtEmpUser.Text;
+                    employee.Permission = cbbPermission.Text;
                     employee.EmpAddr = txtEmpAddr.Text;
                     employee.EmpPhone = txtEmpPhone.Text;
                     employee.EmpPass = MD5Hash(txtEmpPass.Text);
@@ -140,6 +148,8 @@ namespace ProjectWindow
             txtEmpPass.Text = "";
             txtEmpAddr.Text = "";
             txtEmpPhone.Text = "";
+            txtEmpUser.Text = "";
+            cbbPermission.SelectedIndex = -1;
         }
 
         public string MD5Hash(string text)

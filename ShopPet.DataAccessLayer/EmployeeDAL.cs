@@ -19,10 +19,12 @@ namespace ShopPet.DataAccessLayer
                                   {
                                       ID = b.EmpID,
                                       Name = b.EmpName,
-                                      Password = b.EmpPass,
+                                      UserName = b.EmpUser,
+                                      PassWord = b.EmpPass,
+                                      Permission = b.Permission,
                                       Phone = b.EmpPhone,
                                       Address = b.EmpAddr,
-                                      DateOfBirth = b.EmpDOB
+                                      DateOfBirth = (DateTime)b.EmpDOB
                                   };
                 return EmployeeDTO.ToList();
             }
@@ -43,7 +45,9 @@ namespace ShopPet.DataAccessLayer
                         return false;
                     }
                     EmployeeUpdate.EmpName = employee.EmpName;
+                    EmployeeUpdate.EmpUser = employee.EmpUser;
                     EmployeeUpdate.EmpPass = employee.EmpPass;
+                    EmployeeUpdate.Permission = employee.Permission;
                     EmployeeUpdate.EmpPhone = employee.EmpPhone;
                     EmployeeUpdate.EmpAddr = employee.EmpAddr;
                     EmployeeUpdate.EmpDOB = employee.EmpDOB;
@@ -113,7 +117,9 @@ namespace ShopPet.DataAccessLayer
                         return false;
                     }
                     p.EmpName = employee.EmpName;
+                    p.EmpUser = employee.EmpUser;
                     p.EmpPass = employee.EmpPass;
+                    p.Permission = employee.Permission;
                     p.EmpPhone = employee.EmpPhone;
                     p.EmpAddr = employee.EmpAddr;
                     p.EmpDOB = employee.EmpDOB;

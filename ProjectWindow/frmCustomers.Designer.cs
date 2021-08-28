@@ -37,7 +37,6 @@ namespace ProjectWindow
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.btnEdit = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.txtCusAddr = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
@@ -46,7 +45,6 @@ namespace ProjectWindow
             this.txtCusName = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.CusDOB = new System.Windows.Forms.DateTimePicker();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.dgvListCustomer = new Guna.UI.WinForms.GunaDataGridView();
@@ -143,23 +141,12 @@ namespace ProjectWindow
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel6.Location = new System.Drawing.Point(285, 135);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(109, 21);
-            this.gunaLabel6.TabIndex = 18;
-            this.gunaLabel6.Text = "Date of Birth";
-            // 
             // gunaLabel4
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel4.Location = new System.Drawing.Point(560, 64);
+            this.gunaLabel4.Location = new System.Drawing.Point(426, 37);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(72, 21);
             this.gunaLabel4.TabIndex = 17;
@@ -176,7 +163,7 @@ namespace ProjectWindow
             this.txtCusAddr.FocusedBorderColor = System.Drawing.Color.Black;
             this.txtCusAddr.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCusAddr.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusAddr.Location = new System.Drawing.Point(560, 91);
+            this.txtCusAddr.Location = new System.Drawing.Point(426, 64);
             this.txtCusAddr.Multiline = true;
             this.txtCusAddr.Name = "txtCusAddr";
             this.txtCusAddr.PasswordChar = '\0';
@@ -190,7 +177,7 @@ namespace ProjectWindow
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel5.Location = new System.Drawing.Point(289, 64);
+            this.gunaLabel5.Location = new System.Drawing.Point(189, 108);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(59, 21);
             this.gunaLabel5.TabIndex = 13;
@@ -207,7 +194,7 @@ namespace ProjectWindow
             this.txtCusPhone.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtCusPhone.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCusPhone.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusPhone.Location = new System.Drawing.Point(289, 91);
+            this.txtCusPhone.Location = new System.Drawing.Point(189, 135);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.PasswordChar = '\0';
             this.txtCusPhone.Radius = 10;
@@ -220,7 +207,7 @@ namespace ProjectWindow
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel2.Location = new System.Drawing.Point(10, 64);
+            this.gunaLabel2.Location = new System.Drawing.Point(185, 37);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(55, 21);
             this.gunaLabel2.TabIndex = 9;
@@ -237,7 +224,7 @@ namespace ProjectWindow
             this.txtCusName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtCusName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCusName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusName.Location = new System.Drawing.Point(10, 91);
+            this.txtCusName.Location = new System.Drawing.Point(185, 64);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.PasswordChar = '\0';
             this.txtCusName.Radius = 10;
@@ -253,11 +240,9 @@ namespace ProjectWindow
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
-            this.gunaPanel2.Controls.Add(this.CusDOB);
             this.gunaPanel2.Controls.Add(this.btnDelete);
             this.gunaPanel2.Controls.Add(this.btnEdit);
             this.gunaPanel2.Controls.Add(this.btnSave);
-            this.gunaPanel2.Controls.Add(this.gunaLabel6);
             this.gunaPanel2.Controls.Add(this.gunaLabel4);
             this.gunaPanel2.Controls.Add(this.txtCusAddr);
             this.gunaPanel2.Controls.Add(this.gunaLabel5);
@@ -271,29 +256,13 @@ namespace ProjectWindow
             this.gunaPanel2.Size = new System.Drawing.Size(802, 246);
             this.gunaPanel2.TabIndex = 21;
             // 
-            // CusDOB
-            // 
-            this.CusDOB.CalendarFont = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusDOB.CalendarForeColor = System.Drawing.Color.Gray;
-            this.CusDOB.CalendarMonthBackground = System.Drawing.Color.White;
-            this.CusDOB.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.CusDOB.CalendarTitleForeColor = System.Drawing.Color.Gray;
-            this.CusDOB.CalendarTrailingForeColor = System.Drawing.Color.Gray;
-            this.CusDOB.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.CusDOB.Location = new System.Drawing.Point(289, 159);
-            this.CusDOB.Name = "CusDOB";
-            this.CusDOB.Size = new System.Drawing.Size(206, 25);
-            this.CusDOB.TabIndex = 23;
-            this.CusDOB.Value = new System.DateTime(2021, 8, 24, 0, 0, 0, 0);
-            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(3, 10);
+            this.gunaLabel1.Location = new System.Drawing.Point(3, 9);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(150, 38);
             this.gunaLabel1.TabIndex = 6;
@@ -328,7 +297,7 @@ namespace ProjectWindow
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvListCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvListCustomer.ColumnHeadersHeight = 4;
+            this.dgvListCustomer.ColumnHeadersHeight = 25;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -358,7 +327,7 @@ namespace ProjectWindow
             this.dgvListCustomer.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgvListCustomer.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvListCustomer.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvListCustomer.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvListCustomer.ThemeStyle.HeaderStyle.Height = 25;
             this.dgvListCustomer.ThemeStyle.ReadOnly = false;
             this.dgvListCustomer.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvListCustomer.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -397,7 +366,6 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaButton btnDelete;
         private Guna.UI.WinForms.GunaButton btnEdit;
         private Guna.UI.WinForms.GunaButton btnSave;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaTextBox txtCusAddr;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
@@ -406,7 +374,6 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaTextBox txtCusName;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaElipse gunaElipse2;
-        private System.Windows.Forms.DateTimePicker CusDOB;
         private Guna.UI.WinForms.GunaDataGridView dgvListCustomer;
     }
 }
