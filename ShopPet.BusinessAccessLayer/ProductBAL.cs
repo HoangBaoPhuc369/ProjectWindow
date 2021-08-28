@@ -28,7 +28,6 @@ namespace ShopPet.BusinessAccessLayer
 
             try
             {
-
                 if (!_productDAL.DeleteProduct(product, out error))
                 {
                     return false;
@@ -50,6 +49,36 @@ namespace ShopPet.BusinessAccessLayer
                 if (product.ProId > 0)
                 {
                     if (!_productDAL.UpdateProduct(product, out error))
+                    {
+                        return false;
+                    }
+                }
+                //tạo mới
+                else
+                {
+                    if (!_productDAL.NewProduct(product, out error))
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+            return true;
+        }
+
+        public bool SaveProductFromBill(Product product, out string error)
+        {
+            try
+            {
+                //cập nhật
+                if (product.ProId > 0)
+                {
+                    if (!_productDAL.UpdateProductFromBill(product, out error))
                     {
                         return false;
                     }

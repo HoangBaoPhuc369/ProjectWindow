@@ -56,6 +56,31 @@ namespace ShopPet.DataAccessLayer
             }
         }
 
+        public bool UpdateProductFromBill(Product product, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                using (var dbcontext = new ShopPetModels())
+                {
+                    var Update = dbcontext.Products.Find(product.ProId);
+                    if (Update == null)
+                    {
+                        error = "Product not found !!!";
+                        return false;
+                    }
+                    Update.ProQty = product.ProQty;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+        }
+
         public bool NewProduct(Product product, out string error)
         {
             error = string.Empty;
