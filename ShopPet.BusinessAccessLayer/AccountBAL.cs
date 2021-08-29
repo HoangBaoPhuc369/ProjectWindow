@@ -28,6 +28,11 @@ namespace ShopPet.BusinessAccessLayer
             //Mã hóa mật khẩu trước khi kiểm tra
             return _accountDAL.CheckEmployeeLogin(username, MD5Hash(password), out error);
         }
+        public bool CheckPermission(string username, string password, out string error)
+        {
+            //Mã hóa mật khẩu trước khi kiểm tra
+            return _accountDAL.CheckPermission(username, MD5Hash(password), out error);
+        }
         public string MD5Hash(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

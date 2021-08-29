@@ -1,4 +1,5 @@
-﻿using ShopPet.BusinessAccessLayer;
+﻿using ProjectWindow.Constance;
+using ShopPet.BusinessAccessLayer;
 using ShopPet.DataAccessLayer.Entities;
 using ShopPetDTO;
 using System;
@@ -26,8 +27,15 @@ namespace ProjectWindow
         private void FrmCustomers_Load(object sender, EventArgs e)
         {
             LoadCustomerList();
+            Permission();
         }
-
+        public void Permission()
+        {
+            if (GetValue.Permission == false)
+            {
+                btnDelete.Enabled = false;
+            }
+        }
         private void LoadCustomerList()
         {
             List<CustomerDTO> listCustomer = _customerBAL.GetCustomers();

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
 using ShopPet.DataAccessLayer.Entities;
+using ProjectWindow.Constance;
 
 namespace ProjectWindow
 {
@@ -65,6 +66,16 @@ namespace ProjectWindow
             {
                 MessageBox.Show("Login success!");
                 //Mở form main thì ẩn form login đi
+                if (_accountBAL.CheckPermission(username, password, out error))
+                {
+                    MessageBox.Show("you' ve login with admin permission");
+                    GetValue.Permission = true;
+                }
+                else
+                {
+                    MessageBox.Show("you' ve login with user permission");
+                    GetValue.Permission = false;
+                }
                 frmMain frmMain = new frmMain(txtUsername.Text);
                 this.Visible = false;
                 frmMain.ShowDialog();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectWindow.Constance;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,6 +83,19 @@ namespace ProjectWindow
         {
             //đóng form main thì form login hiện lên
             this.Close();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            Permission();
+        }
+
+        public void Permission()
+        {
+            if (GetValue.Permission == false)
+            {
+                btnEmployees.Enabled = false;
+            }
         }
     }
 }
