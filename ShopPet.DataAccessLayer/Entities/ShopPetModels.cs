@@ -30,8 +30,17 @@ namespace ShopPet.DataAccessLayer.Entities
                 .Property(e => e.Password)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Bill>()
+                .HasMany(e => e.Details)
+                .WithOptional(e => e.Bill)
+                .HasForeignKey(e => e.IDBills);
+
             modelBuilder.Entity<Customer>()
                 .Property(e => e.CusPhone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Detail>()
+                .Property(e => e.Category)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()

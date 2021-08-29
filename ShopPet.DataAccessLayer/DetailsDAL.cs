@@ -10,23 +10,23 @@ namespace ShopPet.DataAccessLayer
 {
     public class DetailsDAL
     {
-        public List<DetailsDTO> GetDetails()
-        {
-            using (var dbcontext = new ShopPetModels())
-            {
-                var DetailsDTO = from b in dbcontext.Details
-                                 select new DetailsDTO()
-                                 {
-                                     ID = b.ID,
-                                     Product = b.Product,
-                                     Quanlity = b.Quanlity,
-                                     Price = b.Price,
-                                     Total = b.Total
-                                 };
-                return DetailsDTO.ToList();
-            }
+        //public List<DetailsDTO> GetDetails()
+        //{
+        //    using (var dbcontext = new ShopPetModels())
+        //    {
+        //        var DetailsDTO = from b in dbcontext.Details
+        //                         select new DetailsDTO()
+        //                         {
+        //                             ID = b.ID,
+        //                             Product = b.Product,
+        //                             Quanlity = b.Quanlity,
+        //                             Price = b.Price,
+        //                             Total = b.Total
+        //                         };
+        //        return DetailsDTO.ToList();
+        //    }
 
-        }
+        //}
         public bool DetailsUpdate(Detail details, out string error)
         {
             error = string.Empty;

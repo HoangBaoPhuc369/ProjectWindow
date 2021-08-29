@@ -109,43 +109,45 @@ namespace ProjectWindow
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string error;
-            
-            if (dgvListEmployee.SelectedRows.Count > 0)
+            if (CheckUserName())
             {
-                if (txtEmpName.Text != "" && txtEmpPass.Text != "" && txtEmpPhone.Text != "" && txtEmpAddr.Text != "")
+                string error;
+                if (dgvListEmployee.SelectedRows.Count > 0)
                 {
-                    DataGridViewRow row = dgvListEmployee.SelectedRows[0];
-                    int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
-                    // Sửa
-                    Employee employee = new Employee();
-                    employee.EmpName = txtEmpName.Text;
-                    employee.EmpUser = txtEmpUser.Text;
-                    employee.Permission = cbbPermission.Text;
-                    employee.EmpAddr = txtEmpAddr.Text;
-                    employee.EmpPhone = txtEmpPhone.Text;
-                    employee.EmpPass = MD5Hash(txtEmpPass.Text);
-                    employee.EmpDOB = EmpDOB.Value.Date;
-                    if (_employeeBAL.EditEmployee(ID, employee, out error))
+                    if (txtEmpName.Text != "" && txtEmpPass.Text != "" && txtEmpPhone.Text != "" && txtEmpAddr.Text != "")
                     {
-                        MessageBox.Show("Edit success");
-                        LoadEmployeeList();
-                        Clear();
+                        DataGridViewRow row = dgvListEmployee.SelectedRows[0];
+                        int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
+                        // Sửa
+                        Employee employee = new Employee();
+                        employee.EmpName = txtEmpName.Text;
+                        employee.EmpUser = txtEmpUser.Text;
+                        employee.Permission = cbbPermission.Text;
+                        employee.EmpAddr = txtEmpAddr.Text;
+                        employee.EmpPhone = txtEmpPhone.Text;
+                        employee.EmpPass = MD5Hash(txtEmpPass.Text);
+                        employee.EmpDOB = EmpDOB.Value.Date;
+                        if (_employeeBAL.EditEmployee(ID, employee, out error))
+                        {
+                            MessageBox.Show("Edit success");
+                            LoadEmployeeList();
+                            Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Edit fail !!!" + error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Edit fail !!!" + error);
+                        MessageBox.Show("Please Fill all information !!!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill all information !!!");
+                    MessageBox.Show("Choose a Employee to Edit !!!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Choose a Employee to Edit !!!");
-            }
+            }        
         }
 
         public void Clear()

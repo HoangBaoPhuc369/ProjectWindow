@@ -18,10 +18,10 @@ namespace ShopPet.BusinessAccessLayer
             _detailsDAL = new DetailsDAL();
         }
 
-        public List<DetailsDTO> GetDetails()
-        {
-            return _detailsDAL.GetDetails();
-        }
+        //public List<DetailsDTO> GetDetails()
+        //{
+        //    return _detailsDAL.GetDetails();
+        //}
 
         public bool SaveDetails(Detail details, out string error)
         {

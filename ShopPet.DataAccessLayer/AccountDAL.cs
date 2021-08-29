@@ -50,10 +50,9 @@ namespace ShopPet.DataAccessLayer
             {
                 using (var dbcontext = new ShopPetModels())
                 {
-                    string name = dbcontext.Employees.Where(tk => tk.EmpUser == username && tk.EmpPass == password).Select(i => i.Permission).SingleOrDefault();
-                    //var permission = dbcontext.Employees.Where(tk => tk.EmpUser == username && tk.EmpPass == password)
-                    //          .Select(i => new { permission = i.Permission });
-                    if (name == "user")
+                    string p = dbcontext.Employees.Where(tk => tk.EmpUser == username 
+                    && tk.EmpPass == password).Select(i => i.Permission).SingleOrDefault();
+                    if (p == "user")
                     {
                         return false;
                     }

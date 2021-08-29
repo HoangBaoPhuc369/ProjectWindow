@@ -54,20 +54,21 @@ namespace ProjectWindow
             this.txtPrice = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.txtProName = new Guna.UI.WinForms.GunaTextBox();
-            this.txtPrint = new Guna.UI.WinForms.GunaButton();
+            this.btnPaybills = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.dgvProductList = new Guna.UI.WinForms.GunaDataGridView();
             this.dgvBill = new Guna.UI.WinForms.GunaDataGridView();
             this.dgvDetails = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -301,33 +302,33 @@ namespace ProjectWindow
             this.txtProName.Size = new System.Drawing.Size(176, 29);
             this.txtProName.TabIndex = 29;
             // 
-            // txtPrint
+            // btnPaybills
             // 
-            this.txtPrint.AnimationHoverSpeed = 0.07F;
-            this.txtPrint.AnimationSpeed = 0.03F;
-            this.txtPrint.BackColor = System.Drawing.Color.Transparent;
-            this.txtPrint.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPrint.BorderColor = System.Drawing.Color.Cyan;
-            this.txtPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtPrint.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.txtPrint.FocusedColor = System.Drawing.Color.Empty;
-            this.txtPrint.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrint.ForeColor = System.Drawing.Color.Gray;
-            this.txtPrint.Image = null;
-            this.txtPrint.ImageSize = new System.Drawing.Size(20, 20);
-            this.txtPrint.Location = new System.Drawing.Point(448, 279);
-            this.txtPrint.Name = "txtPrint";
-            this.txtPrint.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.txtPrint.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.txtPrint.OnHoverForeColor = System.Drawing.Color.White;
-            this.txtPrint.OnHoverImage = null;
-            this.txtPrint.OnPressedColor = System.Drawing.Color.Black;
-            this.txtPrint.Radius = 10;
-            this.txtPrint.Size = new System.Drawing.Size(152, 24);
-            this.txtPrint.TabIndex = 30;
-            this.txtPrint.Text = "Pay the bill";
-            this.txtPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrint.Click += new System.EventHandler(this.txtPrint_Click);
+            this.btnPaybills.AnimationHoverSpeed = 0.07F;
+            this.btnPaybills.AnimationSpeed = 0.03F;
+            this.btnPaybills.BackColor = System.Drawing.Color.Transparent;
+            this.btnPaybills.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPaybills.BorderColor = System.Drawing.Color.Cyan;
+            this.btnPaybills.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPaybills.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPaybills.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPaybills.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPaybills.ForeColor = System.Drawing.Color.Gray;
+            this.btnPaybills.Image = null;
+            this.btnPaybills.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPaybills.Location = new System.Drawing.Point(448, 279);
+            this.btnPaybills.Name = "btnPaybills";
+            this.btnPaybills.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnPaybills.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPaybills.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPaybills.OnHoverImage = null;
+            this.btnPaybills.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPaybills.Radius = 10;
+            this.btnPaybills.Size = new System.Drawing.Size(152, 24);
+            this.btnPaybills.TabIndex = 30;
+            this.btnPaybills.Text = "Pay the bill";
+            this.btnPaybills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPaybills.Click += new System.EventHandler(this.txtPrint_Click);
             // 
             // gunaLabel9
             // 
@@ -484,6 +485,7 @@ namespace ProjectWindow
             this.dgvDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column1,
+            this.Column6,
             this.Column2,
             this.Column3,
             this.Column4});
@@ -526,36 +528,6 @@ namespace ProjectWindow
             this.dgvDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 50.76145F;
-            this.Column5.HeaderText = "IDPro";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 112.3097F;
-            this.Column1.HeaderText = "Product";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 112.3097F;
-            this.Column2.HeaderText = "Quanlity";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 112.3097F;
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 112.3097F;
-            this.Column4.HeaderText = "Total";
-            this.Column4.Name = "Column4";
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -592,6 +564,41 @@ namespace ProjectWindow
             this.gunaLabel1.TabIndex = 40;
             this.gunaLabel1.Text = "Total:";
             // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 50.76145F;
+            this.Column5.HeaderText = "ID";
+            this.Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 112.3097F;
+            this.Column1.HeaderText = "Product";
+            this.Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Cate";
+            this.Column6.Name = "Column6";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 112.3097F;
+            this.Column2.HeaderText = "Quanlity";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 112.3097F;
+            this.Column3.HeaderText = "Price";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 112.3097F;
+            this.Column4.HeaderText = "Total";
+            this.Column4.Name = "Column4";
+            // 
             // frmBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,7 +612,7 @@ namespace ProjectWindow
             this.Controls.Add(this.dgvBill);
             this.Controls.Add(this.dgvProductList);
             this.Controls.Add(this.gunaLabel9);
-            this.Controls.Add(this.txtPrint);
+            this.Controls.Add(this.btnPaybills);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -638,7 +645,7 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaTextBox txtProName;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI.WinForms.GunaButton txtPrint;
+        private Guna.UI.WinForms.GunaButton btnPaybills;
         private Guna.UI.WinForms.GunaElipse gunaElipse2;
         private Guna.UI.WinForms.GunaDataGridView dgvDetails;
         private Guna.UI.WinForms.GunaDataGridView dgvBill;
@@ -649,6 +656,7 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

@@ -10,14 +10,20 @@ namespace ShopPet.DataAccessLayer.Entities
     {
         public int ID { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string Product { get; set; }
 
-        public int Quanlity { get; set; }
+        public int? Quanlity { get; set; }
 
-        public double Price { get; set; }
+        public double? Price { get; set; }
 
-        public double Total { get; set; }
+        public double? Total { get; set; }
+
+        public int? IDBills { get; set; }
+
+        [StringLength(20)]
+        public string Category { get; set; }
+
+        public virtual Bill Bill { get; set; }
     }
 }

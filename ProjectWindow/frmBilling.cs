@@ -43,7 +43,6 @@ namespace ProjectWindow
         {
             LoadListCustomer();
             LoadProduct();
-            LoadDetails();
             LoadBill();
         }
         private void LoadListCustomer()
@@ -60,18 +59,6 @@ namespace ProjectWindow
             dgvProductList.DataSource = list;
             dgvProductList.ClearSelection();
         }
-        private void LoadDetails()
-        {
-            //    List<DetailsDTO> list = _detailsBAL.GetDetails();
-            //    dgvDetails.DataSource = list;
-            //    dgvDetails.ClearSelection();
-
-            //table.Columns.Add("Product", typeof(string));
-            //table.Columns.Add("Quanlity", typeof(int));
-            //table.Columns.Add("Price", typeof(double));
-            //table.Columns.Add("Total", typeof(double));
-            //dgvDetails.DataSource = table;
-        }
 
         private void LoadBill()
         {
@@ -79,13 +66,14 @@ namespace ProjectWindow
             dgvBill.DataSource = list;
             dgvBill.ClearSelection();
         }
-
+        string Cate;
         private void dgvProductList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvProductList.SelectedRows[0];
 
             ID = int.Parse(row.Cells[0].Value.ToString());
             txtProName.Text = row.Cells[1].Value.ToString();
+            Cate = row.Cells[2].Value.ToString();
             txtPrice.Text = row.Cells[4].Value.ToString();
         }
 
@@ -96,25 +84,8 @@ namespace ProjectWindow
         double TotalPrice = 0;
         private void btnAddToBill_Click(object sender, EventArgs e)
         {
-            //string error;
-            //double sum = 0;
-            //Detail details = new Detail();
-            //details.Price = double.Parse(txtPrice.Text);
-            //details.Product = txtProName.Text;
-            //details.Quanlity = int.Parse(txtQuanlity.Text);
-            //details.Total = details.Price*details.Quanlity;
-            //sum += details.Total;
-            //if (_detailsBAL.SaveDetails(details, out error))
-            //{
-            //    MessageBox.Show("Save success!");
-            //    LoadDetails();
-            //    //Clear();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Save fail! " + error);
-            //}         
-            if (cbbCustomer.SelectedIndex != -1 && txtPrice.Text != "" && txtQuanlity.Text != "" && txtProName.Text != "")
+            if (cbbCustomer.SelectedIndex != -1 && txtPrice.Text != "" && 
+                txtQuanlity.Text != "" && txtProName.Text != "")
             {
                 DataGridViewRow row = dgvProductList.SelectedRows[0];
                 int check = int.Parse(row.Cells[3].Value.ToString());
@@ -124,14 +95,15 @@ namespace ProjectWindow
                     int selectedRow = dgvDetails.Rows.Add();
                     dgvDetails.Rows[selectedRow].Cells[0].Value = ID;
                     dgvDetails.Rows[selectedRow].Cells[1].Value = txtProName.Text;
-                    dgvDetails.Rows[selectedRow].Cells[2].Value = int.Parse(txtQuanlity.Text);
-                    dgvDetails.Rows[selectedRow].Cells[3].Value = double.Parse(txtPrice.Text);
-                    dgvDetails.Rows[selectedRow].Cells[4].Value = totalPrice;
+                    dgvDetails.Rows[selectedRow].Cells[2].Value = Cate;
+                    dgvDetails.Rows[selectedRow].Cells[3].Value = int.Parse(txtQuanlity.Text);
+                    dgvDetails.Rows[selectedRow].Cells[4].Value = double.Parse(txtPrice.Text);
+                    dgvDetails.Rows[selectedRow].Cells[5].Value = totalPrice;
 
                     double sum = 0;
                     for (int i = 0; i < dgvDetails.Rows.Count; i++)
                     {
-                        sum += double.Parse(dgvDetails.Rows[i].Cells[4].Value.ToString());
+                        sum += double.Parse(dgvDetails.Rows[i].Cells[5].Value.ToString());
                     }
                     lblTotal.Text = sum.ToString() + " VND";
                     TotalPrice = sum;
@@ -169,12 +141,14 @@ namespace ProjectWindow
 
                 for (int i = 0; i < dgvDetails.Rows.Count; i++)
                 {
+                    //lưu chi tiết hóa đơn vô database
                     Detail dt = new Detail();
+                    dt.IDBills = bill.BillId;
                     dt.Product = dgvDetails.Rows[i].Cells[1].Value.ToString();
-                    dt.Quanlity = int.Parse(dgvDetails.Rows[i].Cells[2].Value.ToString());
-                    dt.Price = double.Parse(dgvDetails.Rows[i].Cells[3].Value.ToString());
-                    dt.Total = double.Parse(dgvDetails.Rows[i].Cells[4].Value.ToString());
-                    //lưu chi tiết hóa đơn vô database               
+                    dt.Category = dgvDetails.Rows[i].Cells[2].Value.ToString();
+                    dt.Quanlity = int.Parse(dgvDetails.Rows[i].Cells[3].Value.ToString());
+                    dt.Price = double.Parse(dgvDetails.Rows[i].Cells[4].Value.ToString());
+                    dt.Total = double.Parse(dgvDetails.Rows[i].Cells[5].Value.ToString());               
                     if (_detailsBAL.SaveDetails(dt, out error))
                     {
 
@@ -194,7 +168,9 @@ namespace ProjectWindow
                             checkQuanlity = int.Parse(item.Cells[3].Value.ToString());
                         }
                     }
-                    product.ProQty = checkQuanlity - dt.Quanlity;
+                    //Lấy số lượng của sản phẩm trừ số lượng mua của khách hàng
+                    product.ProQty = (int)(checkQuanlity - dt.Quanlity);
+                    //Nếu số lượng vẫn còn thì lưu, không thì xóa ra khỏi danh mục sản phẩm
                     if (product.ProQty > 0)
                     {
                         if (_productBAL.SaveProductFromBill(product, out error))
