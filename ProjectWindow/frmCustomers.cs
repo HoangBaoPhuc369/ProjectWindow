@@ -60,9 +60,7 @@ namespace ProjectWindow
             {
                 MessageBox.Show("Save fail! " + error);
             }
-        }    
-
-      
+        }     
 
         private void btnDelete_Click(object sender, EventArgs e)
         {

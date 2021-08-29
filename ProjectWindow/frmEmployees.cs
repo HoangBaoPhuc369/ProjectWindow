@@ -37,25 +37,33 @@ namespace ProjectWindow
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string error;
-            Employee employee = new Employee();
-            employee.EmpName = txtEmpName.Text;
-            employee.EmpUser = txtEmpUser.Text;
-            employee.Permission = cbbPermission.Text;
-            employee.EmpAddr = txtEmpAddr.Text;
-            employee.EmpPhone = txtEmpPhone.Text;
-            employee.EmpPass = MD5Hash(txtEmpPass.Text);
-            employee.EmpDOB = EmpDOB.Value.Date;
-            if (_employeeBAL.SaveEmployee(employee, out error))
+            if (CheckUserName())
             {
-                MessageBox.Show("Save success!");
-                LoadEmployeeList();
-                Clear();
+                string error;
+                Employee employee = new Employee();
+                employee.EmpName = txtEmpName.Text;
+                employee.EmpUser = txtEmpUser.Text;
+                employee.Permission = cbbPermission.Text;
+                employee.EmpAddr = txtEmpAddr.Text;
+                employee.EmpPhone = txtEmpPhone.Text;
+                employee.EmpPass = MD5Hash(txtEmpPass.Text);
+                employee.EmpDOB = EmpDOB.Value.Date;
+
+                if (_employeeBAL.SaveEmployee(employee, out error))
+                {
+                    MessageBox.Show("Save success!");
+                    LoadEmployeeList();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Save fail! " + error);
+                }
             }
             else
             {
-                MessageBox.Show("Save fail! " + error);
-            }
+                MessageBox.Show("Already have this user !!!");
+            }        
         }
 
         private void dgvListEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,9 +74,7 @@ namespace ProjectWindow
             // Chuyển giá trị lên form
             txtEmpName.Text = row.Cells[1].Value.ToString();
             txtEmpUser.Text = row.Cells[2].Value.ToString();
-            string decryption;
-            decryption = row.Cells[3].Value.ToString();
-            txtEmpPass.Text = MD5Hash(decryption);
+            txtEmpPass.Text = row.Cells[3].Value.ToString();
             cbbPermission.Text = row.Cells[4].Value.ToString();
             txtEmpPhone.Text = row.Cells[5].Value.ToString();
             txtEmpAddr.Text = row.Cells[6].Value.ToString();
@@ -171,6 +177,22 @@ namespace ProjectWindow
             }
 
             return strBuilder.ToString();
+        }
+
+        public bool CheckUserName()
+        {
+            for (int i = 0; i < dgvListEmployee.Rows.Count - 1; i++)
+            {
+                string tmp = txtEmpUser.Text;
+                for (int j = dgvListEmployee.Rows.Count - 1; j > i; j--)
+                {
+                    if (tmp == dgvListEmployee.Rows[j].Cells[2].Value.ToString())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }

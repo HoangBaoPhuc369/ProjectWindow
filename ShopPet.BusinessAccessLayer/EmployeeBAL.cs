@@ -27,7 +27,8 @@ namespace ShopPet.BusinessAccessLayer
         {
             error = string.Empty;
             if (employee.EmpUser == "" || employee.EmpPhone == "" || 
-                employee.EmpPass == "" || employee.EmpAddr == "" || employee.EmpUser == "" || employee.Permission == "")
+                employee.EmpPass == "" || employee.EmpAddr == "" || employee.EmpUser == "" 
+                || employee.Permission == "")
             {
                 error = "\nPlease fill all information";
             }
