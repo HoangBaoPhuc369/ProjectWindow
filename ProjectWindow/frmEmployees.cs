@@ -24,13 +24,13 @@ namespace ProjectWindow
             this.Load += FrmEmployees_Load;
             dgvListEmployee.ClearSelection();
         }
-      
+
         private void FrmEmployees_Load(object sender, EventArgs e)
         {
             LoadEmployeeList();
         }
-        
-        private void LoadEmployeeList() 
+
+        private void LoadEmployeeList()
         {
             List<EmployeeDTO> listEmployee = _employeeBAL.GetEmployees();
             dgvListEmployee.DataSource = listEmployee;
@@ -64,7 +64,7 @@ namespace ProjectWindow
             else
             {
                 MessageBox.Show("Already have this user !!!");
-            }        
+            }
         }
 
         private void dgvListEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -110,7 +110,7 @@ namespace ProjectWindow
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (CheckUserName())
+            if (CheckPassWord())
             {
                 string error;
                 if (dgvListEmployee.SelectedRows.Count > 0)
@@ -148,7 +148,12 @@ namespace ProjectWindow
                 {
                     MessageBox.Show("Choose a Employee to Edit !!!");
                 }
-            }        
+            }
+            else
+            {
+                MessageBox.Show("Please choose another password !!!");
+            }
+            
         }
 
         public void Clear()
@@ -190,6 +195,22 @@ namespace ProjectWindow
                 for (int j = dgvListEmployee.Rows.Count - 1; j > i; j--)
                 {
                     if (tmp == dgvListEmployee.Rows[j].Cells[2].Value.ToString())
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public bool CheckPassWord()
+        {
+            for (int i = 0; i < dgvListEmployee.Rows.Count - 1; i++)
+            {
+                string tmp = MD5Hash(txtEmpPass.Text);
+                for (int j = dgvListEmployee.Rows.Count - 1; j > i; j--)
+                {
+                    if (tmp == dgvListEmployee.Rows[j].Cells[3].Value.ToString())
                     {
                         return false;
                     }
