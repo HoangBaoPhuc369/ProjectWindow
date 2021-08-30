@@ -1,4 +1,5 @@
 ﻿using ShopPet.DataAccessLayer.Entities;
+using ShopPetDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,7 @@ namespace ShopPet.DataAccessLayer
             {
                 using (var dbcontext = new ShopPetModels())
                 {
-                    string p = dbcontext.Employees.Where(tk => tk.EmpUser == username 
+                    string p = dbcontext.Employees.Where(tk => tk.EmpUser == username
                     && tk.EmpPass == password).Select(i => i.Permission).SingleOrDefault();
                     if (p == "user")
                     {
@@ -64,6 +65,24 @@ namespace ShopPet.DataAccessLayer
                 error = exception.Message;
                 return false;
             }
+        }
+
+        
+
+        public List<EmployeeDTO> GetEmployeeName(string username, string password)
+        {
+            using (var dbcontext = new ShopPetModels())
+            {
+                string p = dbcontext.Employees.Where(tk => tk.EmpUser == username
+                     && tk.EmpPass == password).Select(i => i.EmpName).SingleOrDefault();
+                var EmployeeDTO = from b in dbcontext.Employees
+                                  select new EmployeeDTO()
+                                  {
+                                      Name = p,
+                                  };
+                return EmployeeDTO.ToList();
+            }
+
         }
     }
 }

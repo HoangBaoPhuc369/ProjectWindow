@@ -144,6 +144,7 @@ namespace ProjectWindow
                     //lưu chi tiết hóa đơn vô database
                     Detail dt = new Detail();
                     dt.IDBills = bill.BillId;
+                    dt.IDProduct = int.Parse(dgvDetails.Rows[i].Cells[0].Value.ToString());
                     dt.Product = dgvDetails.Rows[i].Cells[1].Value.ToString();
                     dt.Category = dgvDetails.Rows[i].Cells[2].Value.ToString();
                     dt.Quanlity = int.Parse(dgvDetails.Rows[i].Cells[3].Value.ToString());

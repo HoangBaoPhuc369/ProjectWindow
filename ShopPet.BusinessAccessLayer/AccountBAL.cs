@@ -1,4 +1,5 @@
 ﻿using ShopPet.DataAccessLayer;
+using ShopPetDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace ShopPet.BusinessAccessLayer
         {
             //Mã hóa mật khẩu trước khi kiểm tra
             return _accountDAL.CheckPermission(username, MD5Hash(password), out error);
+        }
+
+        public List<EmployeeDTO> GetEmployeeName(string username, string password)
+        {
+            //Mã hóa mật khẩu trước khi kiểm tra
+            return _accountDAL.GetEmployeeName(username, MD5Hash(password));
         }
         public string MD5Hash(string text)
         {

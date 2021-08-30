@@ -22,6 +22,7 @@ namespace ProjectWindow
             InitializeComponent();
             _employeeBAL = new EmployeeBAL();
             this.Load += FrmEmployees_Load;
+            dgvListEmployee.ClearSelection();
         }
       
         private void FrmEmployees_Load(object sender, EventArgs e)

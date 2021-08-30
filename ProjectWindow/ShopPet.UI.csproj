@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constance\GetEmployeeName.cs" />
     <Compile Include="Constance\GetValue.cs" />
     <Compile Include="frmBilling.cs">
       <SubType>Form</SubType>

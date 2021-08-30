@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Guna.UI.WinForms;
 using ShopPet.DataAccessLayer.Entities;
 using ProjectWindow.Constance;
+using ShopPetDTO;
 
 namespace ProjectWindow
 {
@@ -22,7 +23,7 @@ namespace ProjectWindow
             InitializeComponent();
             _accountBAL = new AccountBAL();
         }
-  
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
@@ -49,8 +50,7 @@ namespace ProjectWindow
             ValidateInput(sender);
         }
 
-        public static string TextData;
-        
+        string empName;
         public void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -65,18 +65,24 @@ namespace ProjectWindow
             if (_accountBAL.CheckLogin(username, password, out error) || _accountBAL.CheckEmployeeLogin(username, password, out error))
             {
                 MessageBox.Show("Login success!");
-                //Mở form main thì ẩn form login đi
+                List<EmployeeDTO> listEmployee = _accountBAL.GetEmployeeName(username, password);
+                foreach (var item in listEmployee)
+                {
+                    empName = item.Name;
+                }
+                //Kiểm tra quyền hạn
                 if (_accountBAL.CheckPermission(username, password, out error))
                 {
-                    MessageBox.Show("you' ve login with admin permission");
+                    MessageBox.Show("you've login with admin permission");
                     GetValue.Permission = true;
                 }
                 else
                 {
-                    MessageBox.Show("you' ve login with user permission");
+                    MessageBox.Show("you've login with user permission");
                     GetValue.Permission = false;
                 }
-                frmMain frmMain = new frmMain(txtUsername.Text);
+                //Mở form main thì ẩn form login đi
+                frmMain frmMain = new frmMain(empName);
                 this.Visible = false;
                 frmMain.ShowDialog();
                 this.Visible = true;
@@ -107,6 +113,6 @@ namespace ProjectWindow
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
-        }     
+        }
     }
 }
