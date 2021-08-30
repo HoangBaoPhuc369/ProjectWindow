@@ -1,4 +1,5 @@
 ﻿using ProjectWindow.Constance;
+using Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Report.DataAccessLayer;
 
 namespace ProjectWindow
 {
@@ -96,6 +98,13 @@ namespace ProjectWindow
             {
                 btnEmployees.Enabled = false;
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            this.pnlFormLoader.Controls.Clear();
+            frmReportInformation frmReport = new frmReportInformation();
+            frmReport.Show();
         }
     }
 }

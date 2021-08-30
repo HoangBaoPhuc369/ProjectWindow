@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using Report.DataAccessLayer;
+using Report.Reporting;
 
 namespace Report
 {
@@ -28,15 +30,33 @@ namespace Report
         {
             using (var dbContext = new ShopPetDbContext())
             {
-                string QuerySql = "select d.IDProduct, Product, Category, Price " +
+                string QuerySql = "select b.BillId, CusName, Product, Category, Quanlity, Price " +
                     "from Details d, Bill b " +
                     "where d.IDBills = b.BillId";
+                List<BillInformation> list = dbContext.Database.SqlQuery<BillInformation>
+                    (QuerySql).ToList();
+
+                if (txtIDBills.Text != "")
+                {
+                    list = list.Where(b => b.BillID == int.Parse(txtIDBills.Text)).ToList();
+                    //list = list.Where(b => b.CusName.ToLower() == txtIDBills.Text.ToLower()).ToList();
+                }
+                this.rpvInformation.LocalReport.ReportPath = "ReportBills.rdlc";
+                var reportDataSource = new ReportDataSource("BillsInformationDataset", list);
+                this.rpvInformation.LocalReport.DataSources.Clear(); //clear
+                this.rpvInformation.LocalReport.DataSources.Add(reportDataSource);
+                this.rpvInformation.RefreshReport();
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            ShowPriceListTable();
         }
     }
 }

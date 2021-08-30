@@ -41,6 +41,7 @@ namespace ProjectWindow
             this.btnBilling = new Guna.UI.WinForms.GunaButton();
             this.btnLogOut = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnReport = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -98,7 +99,7 @@ namespace ProjectWindow
             this.btnEmployees.ForeColor = System.Drawing.Color.White;
             this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
             this.btnEmployees.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEmployees.Location = new System.Drawing.Point(2, 209);
+            this.btnEmployees.Location = new System.Drawing.Point(2, 198);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEmployees.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -123,7 +124,7 @@ namespace ProjectWindow
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
             this.btnProduct.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnProduct.Location = new System.Drawing.Point(2, 272);
+            this.btnProduct.Location = new System.Drawing.Point(2, 246);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnProduct.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -148,7 +149,7 @@ namespace ProjectWindow
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
             this.btnCustomers.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCustomers.Location = new System.Drawing.Point(2, 333);
+            this.btnCustomers.Location = new System.Drawing.Point(2, 294);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCustomers.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -173,7 +174,7 @@ namespace ProjectWindow
             this.btnBilling.ForeColor = System.Drawing.Color.White;
             this.btnBilling.Image = ((System.Drawing.Image)(resources.GetObject("btnBilling.Image")));
             this.btnBilling.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBilling.Location = new System.Drawing.Point(2, 397);
+            this.btnBilling.Location = new System.Drawing.Point(2, 342);
             this.btnBilling.Name = "btnBilling";
             this.btnBilling.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnBilling.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -215,12 +216,38 @@ namespace ProjectWindow
             this.gunaElipse3.Radius = 15;
             this.gunaElipse3.TargetControl = this;
             // 
+            // btnReport
+            // 
+            this.btnReport.AnimationHoverSpeed = 0.07F;
+            this.btnReport.AnimationSpeed = 0.03F;
+            this.btnReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnReport.BaseColor = System.Drawing.Color.Transparent;
+            this.btnReport.BorderColor = System.Drawing.Color.Black;
+            this.btnReport.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReport.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReport.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnReport.Location = new System.Drawing.Point(2, 390);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReport.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnReport.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnReport.OnHoverImage = null;
+            this.btnReport.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnReport.Size = new System.Drawing.Size(195, 42);
+            this.btnReport.TabIndex = 8;
+            this.btnReport.Text = "Report";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1096, 607);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnBilling);
@@ -249,5 +276,6 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaButton bntHome;
         private Guna.UI.WinForms.GunaElipse gunaElipse3;
         private System.Windows.Forms.Panel pnlFormLoader;
+        private Guna.UI.WinForms.GunaButton btnReport;
     }
 }

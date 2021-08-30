@@ -65,9 +65,7 @@ namespace ShopPet.DataAccessLayer
                 error = exception.Message;
                 return false;
             }
-        }
-
-        
+        }  
 
         public List<EmployeeDTO> GetEmployeeName(string username, string password)
         {

@@ -163,6 +163,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{AED26FDC-0FD3-4E91-A62D-75F898416458}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShopPet.BusinessAccessLayer\ShopPet.BusinessAccessLayer.csproj">
       <Project>{513422fd-ce57-4109-804f-b00f1ae307dd}</Project>
       <Name>ShopPet.BusinessAccessLayer</Name>
