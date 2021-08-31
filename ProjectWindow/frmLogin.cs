@@ -110,9 +110,6 @@ namespace ProjectWindow
             Application.Exit();
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void txtUsername_TextChanged(object sender, EventArgs e) {}
     }
 }

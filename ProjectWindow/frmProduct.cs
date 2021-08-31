@@ -131,6 +131,7 @@ namespace ProjectWindow
             cbbCategory.SelectedIndex = -1;
             txtQuanlity.Text = "";
             txtPrice.Text = "";
+            dgvProduct.ClearSelection();
         }
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +143,11 @@ namespace ProjectWindow
             cbbCategory.Text = row.Cells[2].Value.ToString();
             txtQuanlity.Text = row.Cells[3].Value.ToString();
             txtPrice.Text = row.Cells[4].Value.ToString();
+        }
+
+        private void gunaCircleButton1_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

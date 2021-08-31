@@ -54,11 +54,6 @@ namespace Report
 
         }
 
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            ShowPriceListTable();
-        }
-
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             ShowPriceListTable();

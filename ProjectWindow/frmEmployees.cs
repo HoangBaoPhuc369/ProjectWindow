@@ -22,7 +22,6 @@ namespace ProjectWindow
             InitializeComponent();
             _employeeBAL = new EmployeeBAL();
             this.Load += FrmEmployees_Load;
-            dgvListEmployee.ClearSelection();
         }
 
         private void FrmEmployees_Load(object sender, EventArgs e)
@@ -164,6 +163,7 @@ namespace ProjectWindow
             txtEmpPhone.Text = "";
             txtEmpUser.Text = "";
             cbbPermission.SelectedIndex = -1;
+            dgvListEmployee.ClearSelection();
         }
 
         public string MD5Hash(string text)
@@ -217,6 +217,11 @@ namespace ProjectWindow
                 }
             }
             return true;
+        }
+
+        private void gunaCircleButton1_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

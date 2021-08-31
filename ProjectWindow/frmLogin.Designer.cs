@@ -142,11 +142,11 @@ namespace ProjectWindow
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLogin.Location = new System.Drawing.Point(105, 444);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnLogin.OnHoverForeColor = System.Drawing.Color.White;
             this.btnLogin.OnHoverImage = null;
-            this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLogin.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogin.Radius = 10;
             this.btnLogin.Size = new System.Drawing.Size(160, 42);
             this.btnLogin.TabIndex = 4;
@@ -159,7 +159,7 @@ namespace ProjectWindow
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel1.Font = new System.Drawing.Font("Comic Sans MS", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(254)))));
             this.gunaLabel1.Location = new System.Drawing.Point(79, 40);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(238, 67);

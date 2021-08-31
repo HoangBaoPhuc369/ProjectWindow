@@ -143,5 +143,10 @@ namespace ProjectWindow
             txtCusPhone.Text = row.Cells[2].Value.ToString();
             txtCusAddr.Text = row.Cells[3].Value.ToString();
         }
+
+        private void gunaCircleButton1_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

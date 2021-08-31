@@ -21,5 +21,10 @@ namespace ProjectWindow
         {
 
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

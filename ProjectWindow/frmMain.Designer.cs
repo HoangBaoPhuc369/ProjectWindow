@@ -75,7 +75,7 @@ namespace ProjectWindow
             this.bntHome.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntHome.ForeColor = System.Drawing.Color.White;
             this.bntHome.Image = ((System.Drawing.Image)(resources.GetObject("bntHome.Image")));
-            this.bntHome.ImageSize = new System.Drawing.Size(30, 30);
+            this.bntHome.ImageSize = new System.Drawing.Size(35, 35);
             this.bntHome.Location = new System.Drawing.Point(4, 150);
             this.bntHome.Name = "bntHome";
             this.bntHome.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -101,7 +101,7 @@ namespace ProjectWindow
             this.btnEmployees.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployees.ForeColor = System.Drawing.Color.White;
             this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
-            this.btnEmployees.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnEmployees.ImageSize = new System.Drawing.Size(35, 35);
             this.btnEmployees.Location = new System.Drawing.Point(4, 200);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -127,7 +127,7 @@ namespace ProjectWindow
             this.btnProduct.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
-            this.btnProduct.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnProduct.ImageSize = new System.Drawing.Size(35, 35);
             this.btnProduct.Location = new System.Drawing.Point(4, 250);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -153,7 +153,7 @@ namespace ProjectWindow
             this.btnCustomers.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
-            this.btnCustomers.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnCustomers.ImageSize = new System.Drawing.Size(35, 35);
             this.btnCustomers.Location = new System.Drawing.Point(4, 300);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -179,7 +179,7 @@ namespace ProjectWindow
             this.btnBilling.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBilling.ForeColor = System.Drawing.Color.White;
             this.btnBilling.Image = ((System.Drawing.Image)(resources.GetObject("btnBilling.Image")));
-            this.btnBilling.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnBilling.ImageSize = new System.Drawing.Size(35, 35);
             this.btnBilling.Location = new System.Drawing.Point(4, 350);
             this.btnBilling.Name = "btnBilling";
             this.btnBilling.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -205,7 +205,7 @@ namespace ProjectWindow
             this.btnLogOut.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLogOut.ImageSize = new System.Drawing.Size(35, 35);
             this.btnLogOut.Location = new System.Drawing.Point(4, 550);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
@@ -236,7 +236,7 @@ namespace ProjectWindow
             this.btnReport.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
             this.btnReport.Location = new System.Drawing.Point(4, 400);
             this.btnReport.Name = "btnReport";
             this.btnReport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
