@@ -38,6 +38,7 @@ namespace ProjectWindow
             this.lblPercentTarget = new Guna.UI.WinForms.GunaLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,7 @@ namespace ProjectWindow
             // 
             this.gunaProgressBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaProgressBar1.BorderColor = System.Drawing.Color.Black;
+            this.gunaProgressBar1.BorderSize = 1;
             this.gunaProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.Default;
             this.gunaProgressBar1.IdleColor = System.Drawing.Color.White;
             this.gunaProgressBar1.Location = new System.Drawing.Point(59, 382);
@@ -98,19 +100,32 @@ namespace ProjectWindow
             this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(120, 352);
+            this.gunaLabel1.Location = new System.Drawing.Point(131, 352);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(79, 27);
             this.gunaLabel1.TabIndex = 3;
             this.gunaLabel1.Text = "Loading";
             // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel2.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(118, 41);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(141, 35);
+            this.gunaLabel2.TabIndex = 4;
+            this.gunaLabel2.Text = "Wait a sec";
+            // 
             // frmLoadingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(146)))), ((int)(((byte)(78)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(383, 501);
+            this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.lblPercentTarget);
             this.Controls.Add(this.gunaProgressBar1);
@@ -136,5 +151,6 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaLabel lblPercentTarget;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
     }
 }

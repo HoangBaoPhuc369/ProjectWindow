@@ -29,43 +29,36 @@ namespace Report
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rpvInformation = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn1 = new System.Windows.Forms.Button();
             this.txtIDBills = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rpvInformation
             // 
-            this.rpvInformation.Location = new System.Drawing.Point(1, 158);
+            this.rpvInformation.Location = new System.Drawing.Point(12, 170);
             this.rpvInformation.Name = "rpvInformation";
             this.rpvInformation.ServerReport.BearerToken = null;
-            this.rpvInformation.Size = new System.Drawing.Size(799, 294);
+            this.rpvInformation.Size = new System.Drawing.Size(845, 362);
             this.rpvInformation.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.btn1);
+            this.panel1.Controls.Add(this.gunaButton1);
             this.panel1.Controls.Add(this.txtIDBills);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(214, 13);
+            this.panel1.Location = new System.Drawing.Point(221, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 132);
+            this.panel1.Size = new System.Drawing.Size(405, 130);
             this.panel1.TabIndex = 1;
-            // 
-            // btn1
-            // 
-            this.btn1.Location = new System.Drawing.Point(221, 80);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(75, 23);
-            this.btn1.TabIndex = 5;
-            this.btn1.Text = "View report";
-            this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // txtIDBills
             // 
@@ -87,6 +80,7 @@ namespace Report
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.Location = new System.Drawing.Point(134, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 24);
@@ -94,13 +88,51 @@ namespace Report
             this.label1.Text = "Bill ID";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 30;
+            this.gunaElipse1.TargetControl = this;
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 15;
+            this.gunaElipse2.TargetControl = this.panel1;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(205, 80);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(93, 29);
+            this.gunaButton1.TabIndex = 6;
+            this.gunaButton1.Text = "View Report";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
             // frmReportInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
+            this.ClientSize = new System.Drawing.Size(869, 544);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rpvInformation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -117,7 +149,9 @@ namespace Report
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaTextBox txtIDBills;
-        private System.Windows.Forms.Button btn1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }
 

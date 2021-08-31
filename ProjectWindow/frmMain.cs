@@ -97,13 +97,17 @@ namespace ProjectWindow
             if (GetValue.Permission == false)
             {
                 btnEmployees.Enabled = false;
+                btnProduct.Enabled = false;
+                btnReport.Enabled = false;
             }
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             this.pnlFormLoader.Controls.Clear();
-            frmReportInformation frmReport = new frmReportInformation();
+            frmReportInformation frmReport = new frmReportInformation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmReport.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmReport);
             frmReport.Show();
         }
     }

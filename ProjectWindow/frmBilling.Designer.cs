@@ -60,15 +60,15 @@ namespace ProjectWindow
             this.dgvProductList = new Guna.UI.WinForms.GunaDataGridView();
             this.dgvBill = new Guna.UI.WinForms.GunaDataGridView();
             this.dgvDetails = new Guna.UI.WinForms.GunaDataGridView();
-            this.lblTotal = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -157,7 +157,7 @@ namespace ProjectWindow
             this.btnReset.AnimationHoverSpeed = 0.07F;
             this.btnReset.AnimationSpeed = 0.03F;
             this.btnReset.BackColor = System.Drawing.Color.Transparent;
-            this.btnReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnReset.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnReset.BorderColor = System.Drawing.Color.Cyan;
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -185,7 +185,7 @@ namespace ProjectWindow
             this.btnAddToBill.AnimationHoverSpeed = 0.07F;
             this.btnAddToBill.AnimationSpeed = 0.03F;
             this.btnAddToBill.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddToBill.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAddToBill.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnAddToBill.BorderColor = System.Drawing.Color.Cyan;
             this.btnAddToBill.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddToBill.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -307,7 +307,7 @@ namespace ProjectWindow
             this.btnPaybills.AnimationHoverSpeed = 0.07F;
             this.btnPaybills.AnimationSpeed = 0.03F;
             this.btnPaybills.BackColor = System.Drawing.Color.Transparent;
-            this.btnPaybills.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPaybills.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnPaybills.BorderColor = System.Drawing.Color.Cyan;
             this.btnPaybills.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPaybills.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -528,6 +528,41 @@ namespace ProjectWindow
             this.dgvDetails.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDetails.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 50.76145F;
+            this.Column5.HeaderText = "ID";
+            this.Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 112.3097F;
+            this.Column1.HeaderText = "Product";
+            this.Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Cate";
+            this.Column6.Name = "Column6";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 112.3097F;
+            this.Column2.HeaderText = "Quanlity";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 112.3097F;
+            this.Column3.HeaderText = "Price";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 112.3097F;
+            this.Column4.HeaderText = "Total";
+            this.Column4.Name = "Column4";
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -564,46 +599,11 @@ namespace ProjectWindow
             this.gunaLabel1.TabIndex = 40;
             this.gunaLabel1.Text = "Total:";
             // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 50.76145F;
-            this.Column5.HeaderText = "ID";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 112.3097F;
-            this.Column1.HeaderText = "Product";
-            this.Column1.Name = "Column1";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Cate";
-            this.Column6.Name = "Column6";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 112.3097F;
-            this.Column2.HeaderText = "Quanlity";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 112.3097F;
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 112.3097F;
-            this.Column4.HeaderText = "Total";
-            this.Column4.Name = "Column4";
-            // 
             // frmBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(885, 583);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaLabel2);

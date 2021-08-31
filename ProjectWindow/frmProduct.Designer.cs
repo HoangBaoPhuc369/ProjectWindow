@@ -181,7 +181,7 @@ namespace ProjectWindow
             this.btnDelete.AnimationHoverSpeed = 0.07F;
             this.btnDelete.AnimationSpeed = 0.03F;
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnDelete.BorderColor = System.Drawing.Color.Cyan;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -198,7 +198,7 @@ namespace ProjectWindow
             this.btnDelete.OnHoverImage = null;
             this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
             this.btnDelete.Radius = 10;
-            this.btnDelete.Size = new System.Drawing.Size(125, 24);
+            this.btnDelete.Size = new System.Drawing.Size(125, 35);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -209,7 +209,7 @@ namespace ProjectWindow
             this.btnEdit.AnimationHoverSpeed = 0.07F;
             this.btnEdit.AnimationSpeed = 0.03F;
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnEdit.BorderColor = System.Drawing.Color.Cyan;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -226,7 +226,7 @@ namespace ProjectWindow
             this.btnEdit.OnHoverImage = null;
             this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btnEdit.Radius = 10;
-            this.btnEdit.Size = new System.Drawing.Size(125, 24);
+            this.btnEdit.Size = new System.Drawing.Size(125, 35);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -237,7 +237,7 @@ namespace ProjectWindow
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnSave.BorderColor = System.Drawing.Color.Cyan;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -254,7 +254,7 @@ namespace ProjectWindow
             this.btnSave.OnHoverImage = null;
             this.btnSave.OnPressedColor = System.Drawing.Color.Black;
             this.btnSave.Radius = 10;
-            this.btnSave.Size = new System.Drawing.Size(125, 24);
+            this.btnSave.Size = new System.Drawing.Size(125, 35);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -381,7 +381,7 @@ namespace ProjectWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(885, 583);
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.dgvProduct);

@@ -42,6 +42,8 @@ namespace ProjectWindow
             this.btnLogOut = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.btnReport = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -73,15 +75,16 @@ namespace ProjectWindow
             this.bntHome.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntHome.ForeColor = System.Drawing.Color.White;
             this.bntHome.Image = ((System.Drawing.Image)(resources.GetObject("bntHome.Image")));
-            this.bntHome.ImageSize = new System.Drawing.Size(20, 20);
-            this.bntHome.Location = new System.Drawing.Point(2, 150);
+            this.bntHome.ImageSize = new System.Drawing.Size(30, 30);
+            this.bntHome.Location = new System.Drawing.Point(4, 150);
             this.bntHome.Name = "bntHome";
-            this.bntHome.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bntHome.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.bntHome.OnHoverBorderColor = System.Drawing.Color.Black;
             this.bntHome.OnHoverForeColor = System.Drawing.Color.White;
             this.bntHome.OnHoverImage = null;
             this.bntHome.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bntHome.Size = new System.Drawing.Size(195, 42);
+            this.bntHome.Radius = 10;
+            this.bntHome.Size = new System.Drawing.Size(189, 42);
             this.bntHome.TabIndex = 2;
             this.bntHome.Text = "Home";
             this.bntHome.Click += new System.EventHandler(this.bntHome_Click);
@@ -98,15 +101,16 @@ namespace ProjectWindow
             this.btnEmployees.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployees.ForeColor = System.Drawing.Color.White;
             this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
-            this.btnEmployees.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEmployees.Location = new System.Drawing.Point(2, 198);
+            this.btnEmployees.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnEmployees.Location = new System.Drawing.Point(4, 200);
             this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEmployees.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnEmployees.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEmployees.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEmployees.OnHoverImage = null;
             this.btnEmployees.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEmployees.Size = new System.Drawing.Size(195, 42);
+            this.btnEmployees.Radius = 10;
+            this.btnEmployees.Size = new System.Drawing.Size(189, 42);
             this.btnEmployees.TabIndex = 3;
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
@@ -123,15 +127,16 @@ namespace ProjectWindow
             this.btnProduct.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
-            this.btnProduct.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnProduct.Location = new System.Drawing.Point(2, 246);
+            this.btnProduct.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnProduct.Location = new System.Drawing.Point(4, 250);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnProduct.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnProduct.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnProduct.OnHoverForeColor = System.Drawing.Color.White;
             this.btnProduct.OnHoverImage = null;
             this.btnProduct.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnProduct.Size = new System.Drawing.Size(195, 42);
+            this.btnProduct.Radius = 10;
+            this.btnProduct.Size = new System.Drawing.Size(189, 42);
             this.btnProduct.TabIndex = 4;
             this.btnProduct.Text = "Product";
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
@@ -148,15 +153,16 @@ namespace ProjectWindow
             this.btnCustomers.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
-            this.btnCustomers.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCustomers.Location = new System.Drawing.Point(2, 294);
+            this.btnCustomers.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnCustomers.Location = new System.Drawing.Point(4, 300);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCustomers.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnCustomers.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnCustomers.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCustomers.OnHoverImage = null;
             this.btnCustomers.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCustomers.Size = new System.Drawing.Size(195, 42);
+            this.btnCustomers.Radius = 10;
+            this.btnCustomers.Size = new System.Drawing.Size(189, 42);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
@@ -173,15 +179,16 @@ namespace ProjectWindow
             this.btnBilling.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBilling.ForeColor = System.Drawing.Color.White;
             this.btnBilling.Image = ((System.Drawing.Image)(resources.GetObject("btnBilling.Image")));
-            this.btnBilling.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBilling.Location = new System.Drawing.Point(2, 342);
+            this.btnBilling.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnBilling.Location = new System.Drawing.Point(4, 350);
             this.btnBilling.Name = "btnBilling";
-            this.btnBilling.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBilling.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnBilling.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnBilling.OnHoverForeColor = System.Drawing.Color.White;
             this.btnBilling.OnHoverImage = null;
             this.btnBilling.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnBilling.Size = new System.Drawing.Size(195, 42);
+            this.btnBilling.Radius = 10;
+            this.btnBilling.Size = new System.Drawing.Size(189, 42);
             this.btnBilling.TabIndex = 5;
             this.btnBilling.Text = "Billing";
             this.btnBilling.Click += new System.EventHandler(this.btnBilling_Click);
@@ -198,15 +205,16 @@ namespace ProjectWindow
             this.btnLogOut.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
-            this.btnLogOut.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogOut.Location = new System.Drawing.Point(2, 550);
+            this.btnLogOut.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLogOut.Location = new System.Drawing.Point(4, 550);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLogOut.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnLogOut.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnLogOut.OnHoverForeColor = System.Drawing.Color.White;
             this.btnLogOut.OnHoverImage = null;
             this.btnLogOut.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnLogOut.Size = new System.Drawing.Size(195, 42);
+            this.btnLogOut.Radius = 10;
+            this.btnLogOut.Size = new System.Drawing.Size(189, 42);
             this.btnLogOut.TabIndex = 6;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -228,25 +236,37 @@ namespace ProjectWindow
             this.btnReport.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnReport.Location = new System.Drawing.Point(2, 390);
+            this.btnReport.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReport.Location = new System.Drawing.Point(4, 400);
             this.btnReport.Name = "btnReport";
-            this.btnReport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnReport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnReport.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnReport.OnHoverForeColor = System.Drawing.Color.White;
             this.btnReport.OnHoverImage = null;
             this.btnReport.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnReport.Size = new System.Drawing.Size(195, 42);
+            this.btnReport.Radius = 10;
+            this.btnReport.Size = new System.Drawing.Size(189, 42);
             this.btnReport.TabIndex = 8;
             this.btnReport.Text = "Report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(181, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(255)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1096, 607);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.btnLogOut);
@@ -260,6 +280,7 @@ namespace ProjectWindow
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +298,6 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaElipse gunaElipse3;
         private System.Windows.Forms.Panel pnlFormLoader;
         private Guna.UI.WinForms.GunaButton btnReport;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

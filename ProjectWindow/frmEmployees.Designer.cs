@@ -30,11 +30,15 @@ namespace ProjectWindow
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.cbbPermission = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.txtEmpUser = new Guna.UI.WinForms.GunaTextBox();
             this.EmpDOB = new System.Windows.Forms.DateTimePicker();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.btnEdit = new Guna.UI.WinForms.GunaButton();
@@ -52,10 +56,6 @@ namespace ProjectWindow
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.dgvListEmployee = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
-            this.txtEmpUser = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.cbbPermission = new Guna.UI.WinForms.GunaComboBox();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,70 @@ namespace ProjectWindow
             this.gunaPanel2.Size = new System.Drawing.Size(802, 246);
             this.gunaPanel2.TabIndex = 18;
             // 
+            // cbbPermission
+            // 
+            this.cbbPermission.BackColor = System.Drawing.Color.Transparent;
+            this.cbbPermission.BaseColor = System.Drawing.Color.White;
+            this.cbbPermission.BorderColor = System.Drawing.Color.Silver;
+            this.cbbPermission.BorderSize = 1;
+            this.cbbPermission.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbPermission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPermission.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbPermission.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbPermission.ForeColor = System.Drawing.Color.Black;
+            this.cbbPermission.FormattingEnabled = true;
+            this.cbbPermission.Items.AddRange(new object[] {
+            "admin",
+            "user"});
+            this.cbbPermission.Location = new System.Drawing.Point(693, 34);
+            this.cbbPermission.Name = "cbbPermission";
+            this.cbbPermission.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbbPermission.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbbPermission.Radius = 10;
+            this.cbbPermission.Size = new System.Drawing.Size(92, 26);
+            this.cbbPermission.TabIndex = 31;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.ForeColor = System.Drawing.Color.Gray;
+            this.gunaLabel9.Location = new System.Drawing.Point(689, 10);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(96, 21);
+            this.gunaLabel9.TabIndex = 30;
+            this.gunaLabel9.Text = "Permission";
+            // 
+            // gunaLabel8
+            // 
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.ForeColor = System.Drawing.Color.Gray;
+            this.gunaLabel8.Location = new System.Drawing.Point(575, 55);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(89, 21);
+            this.gunaLabel8.TabIndex = 24;
+            this.gunaLabel8.Text = "UserName";
+            // 
+            // txtEmpUser
+            // 
+            this.txtEmpUser.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmpUser.BaseColor = System.Drawing.Color.White;
+            this.txtEmpUser.BorderColor = System.Drawing.Color.Silver;
+            this.txtEmpUser.BorderSize = 1;
+            this.txtEmpUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmpUser.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtEmpUser.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtEmpUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtEmpUser.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpUser.Location = new System.Drawing.Point(575, 82);
+            this.txtEmpUser.Name = "txtEmpUser";
+            this.txtEmpUser.PasswordChar = '\0';
+            this.txtEmpUser.Radius = 10;
+            this.txtEmpUser.SelectedText = "";
+            this.txtEmpUser.Size = new System.Drawing.Size(206, 29);
+            this.txtEmpUser.TabIndex = 23;
+            // 
             // EmpDOB
             // 
             this.EmpDOB.CalendarFont = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,7 +177,7 @@ namespace ProjectWindow
             this.btnDelete.AnimationHoverSpeed = 0.07F;
             this.btnDelete.AnimationSpeed = 0.03F;
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnDelete.BorderColor = System.Drawing.Color.Cyan;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -141,7 +205,7 @@ namespace ProjectWindow
             this.btnEdit.AnimationHoverSpeed = 0.07F;
             this.btnEdit.AnimationSpeed = 0.03F;
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnEdit.BorderColor = System.Drawing.Color.Cyan;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -169,7 +233,7 @@ namespace ProjectWindow
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
             this.btnSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -355,30 +419,30 @@ namespace ProjectWindow
             // 
             // dgvListEmployee
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvListEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListEmployee.BackgroundColor = System.Drawing.Color.White;
             this.dgvListEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListEmployee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvListEmployee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListEmployee.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListEmployee.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListEmployee.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListEmployee.EnableHeadersVisualStyles = false;
             this.dgvListEmployee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvListEmployee.Location = new System.Drawing.Point(12, 308);
@@ -411,75 +475,11 @@ namespace ProjectWindow
             this.dgvListEmployee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvListEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellContentClick);
             // 
-            // gunaLabel8
-            // 
-            this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel8.Location = new System.Drawing.Point(575, 55);
-            this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(89, 21);
-            this.gunaLabel8.TabIndex = 24;
-            this.gunaLabel8.Text = "UserName";
-            // 
-            // txtEmpUser
-            // 
-            this.txtEmpUser.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmpUser.BaseColor = System.Drawing.Color.White;
-            this.txtEmpUser.BorderColor = System.Drawing.Color.Silver;
-            this.txtEmpUser.BorderSize = 1;
-            this.txtEmpUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmpUser.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtEmpUser.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtEmpUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtEmpUser.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpUser.Location = new System.Drawing.Point(575, 82);
-            this.txtEmpUser.Name = "txtEmpUser";
-            this.txtEmpUser.PasswordChar = '\0';
-            this.txtEmpUser.Radius = 10;
-            this.txtEmpUser.SelectedText = "";
-            this.txtEmpUser.Size = new System.Drawing.Size(206, 29);
-            this.txtEmpUser.TabIndex = 23;
-            // 
-            // gunaLabel9
-            // 
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel9.Location = new System.Drawing.Point(689, 10);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(96, 21);
-            this.gunaLabel9.TabIndex = 30;
-            this.gunaLabel9.Text = "Permission";
-            // 
-            // cbbPermission
-            // 
-            this.cbbPermission.BackColor = System.Drawing.Color.Transparent;
-            this.cbbPermission.BaseColor = System.Drawing.Color.White;
-            this.cbbPermission.BorderColor = System.Drawing.Color.Silver;
-            this.cbbPermission.BorderSize = 1;
-            this.cbbPermission.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbPermission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbPermission.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbPermission.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbPermission.ForeColor = System.Drawing.Color.Black;
-            this.cbbPermission.FormattingEnabled = true;
-            this.cbbPermission.Items.AddRange(new object[] {
-            "admin",
-            "user"});
-            this.cbbPermission.Location = new System.Drawing.Point(693, 34);
-            this.cbbPermission.Name = "cbbPermission";
-            this.cbbPermission.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbPermission.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbPermission.Radius = 10;
-            this.cbbPermission.Size = new System.Drawing.Size(92, 26);
-            this.cbbPermission.TabIndex = 31;
-            // 
             // frmEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(885, 583);
             this.Controls.Add(this.dgvListEmployee);
             this.Controls.Add(this.gunaLabel7);

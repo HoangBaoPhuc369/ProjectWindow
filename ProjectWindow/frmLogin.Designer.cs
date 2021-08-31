@@ -160,7 +160,7 @@ namespace ProjectWindow
             this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel1.Font = new System.Drawing.Font("Comic Sans MS", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(80, 53);
+            this.gunaLabel1.Location = new System.Drawing.Point(79, 40);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(238, 67);
             this.gunaLabel1.TabIndex = 5;
@@ -171,7 +171,7 @@ namespace ProjectWindow
             this.btnClose.AnimationHoverSpeed = 0.07F;
             this.btnClose.AnimationSpeed = 0.03F;
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnClose.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(175)))), ((int)(((byte)(226)))));
             this.btnClose.BorderColor = System.Drawing.Color.Black;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnClose.FocusedColor = System.Drawing.Color.Empty;
@@ -200,7 +200,7 @@ namespace ProjectWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(175)))), ((int)(((byte)(226)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(383, 501);
             this.Controls.Add(this.btnClose);
