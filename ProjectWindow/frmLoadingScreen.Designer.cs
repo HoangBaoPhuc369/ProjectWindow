@@ -72,8 +72,8 @@ namespace ProjectWindow
             this.gunaProgressBar1.IdleColor = System.Drawing.Color.White;
             this.gunaProgressBar1.Location = new System.Drawing.Point(59, 382);
             this.gunaProgressBar1.Name = "gunaProgressBar1";
-            this.gunaProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(197)))), ((int)(((byte)(195)))));
+            this.gunaProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(67)))), ((int)(((byte)(82)))));
             this.gunaProgressBar1.Radius = 5;
             this.gunaProgressBar1.Size = new System.Drawing.Size(273, 14);
             this.gunaProgressBar1.TabIndex = 1;

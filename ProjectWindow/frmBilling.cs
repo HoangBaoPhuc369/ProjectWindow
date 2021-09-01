@@ -87,6 +87,7 @@ namespace ProjectWindow
             if (cbbCustomer.SelectedIndex != -1 && txtPrice.Text != "" && 
                 txtQuanlity.Text != "" && txtProName.Text != "")
             {
+                //Lấy row hiện tại
                 DataGridViewRow row = dgvProductList.SelectedRows[0];
                 int check = int.Parse(row.Cells[3].Value.ToString());
                 if (int.Parse(txtQuanlity.Text) <= check)
@@ -121,6 +122,7 @@ namespace ProjectWindow
 
         public void txtPrint_Click(object sender, EventArgs e)
         {
+            //Pay the bills
             if (CheckValueOfTableDetails())
             {
                 string error;
@@ -224,7 +226,8 @@ namespace ProjectWindow
             {
                 for (int i = 0; i < rw.Cells.Count; i++)
                 {
-                    if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
+                    if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || 
+                        String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
                     {
 
                     }

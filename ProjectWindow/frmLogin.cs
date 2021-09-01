@@ -73,14 +73,15 @@ namespace ProjectWindow
                 //Kiểm tra quyền hạn
                 if (_accountBAL.CheckPermission(username, password, out error))
                 {
-                    MessageBox.Show("you've login with admin permission");
+                    MessageBox.Show("you've login with ADMIN permission");
                     GetValue.Permission = true;
                 }
                 else
                 {
-                    MessageBox.Show("you've login with user permission");
+                    MessageBox.Show("you've login with USER permission");
                     GetValue.Permission = false;
                 }
+                GetEmployeeName.Name = empName;
                 //Mở form main thì ẩn form login đi
                 frmMain frmMain = new frmMain(empName);
                 this.Visible = false;

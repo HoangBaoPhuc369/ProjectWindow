@@ -39,7 +39,6 @@ namespace ProjectWindow
             }
         }
 
-        //Hàm không trả về giá trị và không có đối số thực hiện việc hiển thị FormLogin
         private void ShowFormLogin()
         {
             frmLogin frmLogin = new frmLogin();

@@ -66,6 +66,9 @@ namespace ProjectWindow
             this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.lblName = new Guna.UI.WinForms.GunaLabel();
+            this.lblHamster = new Guna.UI.WinForms.GunaLabel();
+            this.lblDog = new Guna.UI.WinForms.GunaLabel();
+            this.lblCat = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -174,7 +177,6 @@ namespace ProjectWindow
             this.gunaLabel1.Size = new System.Drawing.Size(35, 30);
             this.gunaLabel1.TabIndex = 6;
             this.gunaLabel1.Text = "Hi";
-            this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // gunaElipse2
             // 
@@ -313,6 +315,7 @@ namespace ProjectWindow
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(205)))), ((int)(((byte)(231)))));
+            this.gunaElipsePanel2.Controls.Add(this.lblCat);
             this.gunaElipsePanel2.Controls.Add(this.gunaLabel10);
             this.gunaElipsePanel2.Controls.Add(this.gunaCirclePictureBox2);
             this.gunaElipsePanel2.Location = new System.Drawing.Point(20, 185);
@@ -349,6 +352,7 @@ namespace ProjectWindow
             // 
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(163)))));
+            this.gunaElipsePanel4.Controls.Add(this.lblDog);
             this.gunaElipsePanel4.Controls.Add(this.gunaLabel9);
             this.gunaElipsePanel4.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaElipsePanel4.Location = new System.Drawing.Point(21, 117);
@@ -385,6 +389,7 @@ namespace ProjectWindow
             // 
             this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(179)))));
+            this.gunaElipsePanel3.Controls.Add(this.lblHamster);
             this.gunaElipsePanel3.Controls.Add(this.gunaCirclePictureBox3);
             this.gunaElipsePanel3.Controls.Add(this.gunaLabel11);
             this.gunaElipsePanel3.Location = new System.Drawing.Point(21, 49);
@@ -457,9 +462,46 @@ namespace ProjectWindow
             this.lblName.ForeColor = System.Drawing.Color.Gray;
             this.lblName.Location = new System.Drawing.Point(103, 30);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(128, 30);
+            this.lblName.Size = new System.Drawing.Size(40, 30);
             this.lblName.TabIndex = 27;
-            this.lblName.Text = "Phuc Hoang";
+            this.lblName.Text = "...";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
+            // 
+            // lblHamster
+            // 
+            this.lblHamster.AutoSize = true;
+            this.lblHamster.BackColor = System.Drawing.Color.Transparent;
+            this.lblHamster.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHamster.ForeColor = System.Drawing.Color.Gray;
+            this.lblHamster.Location = new System.Drawing.Point(189, 18);
+            this.lblHamster.Name = "lblHamster";
+            this.lblHamster.Size = new System.Drawing.Size(27, 19);
+            this.lblHamster.TabIndex = 28;
+            this.lblHamster.Text = "...";
+            // 
+            // lblDog
+            // 
+            this.lblDog.AutoSize = true;
+            this.lblDog.BackColor = System.Drawing.Color.Transparent;
+            this.lblDog.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDog.ForeColor = System.Drawing.Color.Gray;
+            this.lblDog.Location = new System.Drawing.Point(189, 18);
+            this.lblDog.Name = "lblDog";
+            this.lblDog.Size = new System.Drawing.Size(27, 19);
+            this.lblDog.TabIndex = 29;
+            this.lblDog.Text = "...";
+            // 
+            // lblCat
+            // 
+            this.lblCat.AutoSize = true;
+            this.lblCat.BackColor = System.Drawing.Color.Transparent;
+            this.lblCat.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCat.ForeColor = System.Drawing.Color.Gray;
+            this.lblCat.Location = new System.Drawing.Point(190, 18);
+            this.lblCat.Name = "lblCat";
+            this.lblCat.Size = new System.Drawing.Size(27, 19);
+            this.lblCat.TabIndex = 30;
+            this.lblCat.Text = "...";
             // 
             // frmHome
             // 
@@ -544,5 +586,8 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox4;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox3;
         private Guna.UI.WinForms.GunaLabel lblName;
+        private Guna.UI.WinForms.GunaLabel lblCat;
+        private Guna.UI.WinForms.GunaLabel lblDog;
+        private Guna.UI.WinForms.GunaLabel lblHamster;
     }
 }

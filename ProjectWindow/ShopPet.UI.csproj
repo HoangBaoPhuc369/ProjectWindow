@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constance\GetEmployeeName.cs" />
+    <Compile Include="Constance\GetNumOfPets.cs" />
     <Compile Include="Constance\GetValue.cs" />
     <Compile Include="frmBilling.cs">
       <SubType>Form</SubType>

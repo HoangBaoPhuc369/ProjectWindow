@@ -100,5 +100,10 @@ namespace ShopPet.BusinessAccessLayer
             }
             return true;
         }
+
+        //public List<ProductDTO> GetNumOfPets(string name)
+        //{
+        //    return _productDAL.GetNumOfPets(name);
+        //}
     }
 }

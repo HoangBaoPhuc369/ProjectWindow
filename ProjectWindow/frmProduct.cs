@@ -18,6 +18,7 @@ namespace ProjectWindow
     {
         private readonly ProductBAL _productBAL;
         int ID;
+        //string namePets;
         public frmProduct()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace ProjectWindow
         {
             LoadProduct();
             Permission();
+            //CheckNumOfPet();
         }
         public void Permission()
         {
@@ -149,5 +151,21 @@ namespace ProjectWindow
         {
             Clear();
         }
+
+        //public void CheckNumOfPet()
+        //{
+        //    int sum = 0;
+        //    for (int i = 0; i < dgvProduct.Rows.Count; i++)
+        //    {
+        //        foreach (DataGridViewRow item in dgvProduct.Rows)
+        //        {
+        //            if (item.Cells[2].Value.ToString() == "Dog")
+        //            {
+        //                sum = int.Parse(dgvProduct.Rows[i].Cells[3].Value.ToString());
+        //            }
+        //        }
+        //        GetNumOfPets.Dogs += sum.ToString();
+        //    }            
+        //}
     }
 }

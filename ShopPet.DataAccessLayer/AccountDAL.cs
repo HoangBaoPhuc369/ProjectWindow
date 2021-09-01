@@ -71,12 +71,11 @@ namespace ShopPet.DataAccessLayer
         {
             using (var dbcontext = new ShopPetModels())
             {
-                string p = dbcontext.Employees.Where(tk => tk.EmpUser == username
-                     && tk.EmpPass == password).Select(i => i.EmpName).SingleOrDefault();
+                string p = dbcontext.Employees.Where(tk => tk.EmpUser == username && tk.EmpPass == password).Select(i => i.EmpName).FirstOrDefault();
                 var EmployeeDTO = from b in dbcontext.Employees
                                   select new EmployeeDTO()
                                   {
-                                      Name = p,
+                                      Name = p
                                   };
                 return EmployeeDTO.ToList();
             }

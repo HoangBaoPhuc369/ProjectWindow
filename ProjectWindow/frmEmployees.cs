@@ -116,6 +116,7 @@ namespace ProjectWindow
                 {
                     if (txtEmpName.Text != "" && txtEmpPass.Text != "" && txtEmpPhone.Text != "" && txtEmpAddr.Text != "")
                     {
+                        // Lấy row hiện tại
                         DataGridViewRow row = dgvListEmployee.SelectedRows[0];
                         int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
                         // Sửa

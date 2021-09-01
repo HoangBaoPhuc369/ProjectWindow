@@ -8,6 +8,6 @@ namespace ProjectWindow.Constance
 {
     public class GetEmployeeName
     {
-        public string Name { get; set; }
+        public static string Name { get; set; }
     }
 }
