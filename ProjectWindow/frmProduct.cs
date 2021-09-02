@@ -76,53 +76,63 @@ namespace ProjectWindow
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (ID == 0)
+            if (dgvProduct.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Please choose a Product to edit!!!");
-                return;
-            }
-            string error;
-            Product product = new Product();
-            product.ProId = ID;
-            product.ProName = txtName.Text;
-            product.ProCate = cbbCategory.Text;
-            product.ProQty = int.Parse(txtQuanlity.Text);
-            product.ProPrice = double.Parse(txtPrice.Text);
-            if (_productBAL.SaveProduct(product, out error))
-            {
-                MessageBox.Show("Edited");
-                LoadProduct();
-                Clear();
+                // Lấy row hiện tại
+                DataGridViewRow row = dgvProduct.SelectedRows[0];
+                int Id = Convert.ToInt16(row.Cells[0].Value.ToString());
+                if (Id == 0)
+                {
+                    MessageBox.Show("Please choose a Product to edit!!!");
+                    return;
+                }
+                string error;
+                Product product = new Product();
+                product.ProId = Id;
+                product.ProName = txtName.Text;
+                product.ProCate = cbbCategory.Text;
+                product.ProQty = int.Parse(txtQuanlity.Text);
+                product.ProPrice = double.Parse(txtPrice.Text);
+                if (_productBAL.SaveProduct(product, out error))
+                {
+                    MessageBox.Show("Edited");
+                    LoadProduct();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Edit fail !!! \n" + error);
+                }
             }
             else
             {
-                MessageBox.Show("Edit fail !!! \n" + error);
+                MessageBox.Show("Choose a product to edit!!!");
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (ID == 0)
-            {
-                MessageBox.Show("Please choose a Product to delete!!!");
-                return;
-            }
             string error;
-            Product product = new Product();
-            product.ProId = ID;
-            product.ProName = txtName.Text;
-            product.ProCate = cbbCategory.Text;
-            product.ProQty = int.Parse(txtQuanlity.Text);
-            product.ProPrice = double.Parse(txtPrice.Text);
-            if (_productBAL.DeleteProduct(product, out error))
+            if (dgvProduct.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Delete success!");
-                LoadProduct();
-                Clear();
+                // Lấy row hiện tại
+                DataGridViewRow row = dgvProduct.SelectedRows[0];
+                int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
+                // Xóa
+                if (_productBAL.DeleteEmployeeByID(ID, out error))
+                {
+                    MessageBox.Show("Delete success");
+                    LoadProduct();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Delete fail !!! " + error);
+                }
             }
             else
             {
-                MessageBox.Show("Delete fail !!! \n" + error);
+                MessageBox.Show("Choose a product to delete!!!");
             }
         }
 

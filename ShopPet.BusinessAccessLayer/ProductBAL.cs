@@ -41,6 +41,11 @@ namespace ShopPet.BusinessAccessLayer
             return true;
         }
 
+        public bool DeleteEmployeeByID(int proID, out string error)
+        {
+            return _productDAL.RemoveProductByID(proID, out error);
+        }
+
         public bool SaveProduct(Product product, out string error)
         {
             try

@@ -124,6 +124,29 @@ namespace ShopPet.DataAccessLayer
             }
         }
 
+        public bool RemoveProductByID(int id, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                using (var dbcontext = new ShopPetModels())
+                {
+                    var p = dbcontext.Products.SingleOrDefault(x => x.ProId == id);
+                    if (p == null)
+                        return false;
+
+                    dbcontext.Products.Remove(p);
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+        }
+
         //public List<ProductDTO> GetNumOfPets(string name)
         //{
         //    using (var dbcontext = new ShopPetModels())

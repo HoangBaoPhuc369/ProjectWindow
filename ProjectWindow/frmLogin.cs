@@ -34,7 +34,7 @@ namespace ProjectWindow
             GunaTextBox txtInput = (GunaTextBox)sender;
             if (txtInput.Text == "")
             {
-                errorProvider1.SetError(txtInput, "Vui lòng nhập thông tin!");
+                errorProvider1.SetError(txtInput, "Please fill all information!");
                 return false;
             }
             errorProvider1.SetError(txtInput, "");

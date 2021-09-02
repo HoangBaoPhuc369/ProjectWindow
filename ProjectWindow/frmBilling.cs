@@ -106,7 +106,7 @@ namespace ProjectWindow
                     {
                         sum += double.Parse(dgvDetails.Rows[i].Cells[5].Value.ToString());
                     }
-                    lblTotal.Text = sum.ToString() + " VND";
+                    lblTotal.Text = sum.ToString() + " $";
                     TotalPrice = sum;
                 }
                 else
@@ -217,7 +217,7 @@ namespace ProjectWindow
             dgvDetails.DataSource = null;
             dgvDetails.Rows.Clear();
             dgvDetails.Refresh();
-            lblTotal.Text = "0 VND";
+            lblTotal.Text = "0 $";
         }
 
         public bool CheckValueOfTableDetails() 
