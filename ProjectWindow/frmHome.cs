@@ -31,7 +31,10 @@ namespace ProjectWindow
         private void frmHome_Load(object sender, EventArgs e)
         {
             lblName.Text = GetEmployeeName.Name;
-            //CountPets();
+            TotalDogs();
+            TotalCats();
+            TotalHamster();
+            TotalFoods();
         }
 
         private void lblName_Click(object sender, EventArgs e)
@@ -39,13 +42,40 @@ namespace ProjectWindow
            
         }
 
-        //public void CountPets()
-        //{
-        //    List<ProductDTO> listEmployee = _productBAL.GetNumOfPets("Dog");
-        //    foreach (var item in listEmployee)
-        //    {
-        //        lblDog.Text = item.Quanlity.ToString();
-        //    }
-        //}
+        public void TotalDogs()
+        {
+            List<ProductDTO> list = _productBAL.GetNumOfPets("Dog");
+            foreach (var item in list)
+            {
+                lblDog.Text = item.Quanlity.ToString();
+            }
+        }
+
+        public void TotalCats()
+        {
+            List<ProductDTO> list = _productBAL.GetNumOfPets("Cat");
+            foreach (var item in list)
+            {
+                lblCat.Text = item.Quanlity.ToString();
+            }
+        }
+
+        public void TotalHamster()
+        {
+            List<ProductDTO> list = _productBAL.GetNumOfPets("Hamster");
+            foreach (var item in list)
+            {
+                lblHamster.Text = item.Quanlity.ToString();
+            }
+        }
+
+        public void TotalFoods()
+        {
+            List<ProductDTO> list = _productBAL.GetNumOfPets("Food");
+            foreach (var item in list)
+            {
+                lblFoods.Text = item.Quanlity.ToString();
+            }
+        }
     }
 }

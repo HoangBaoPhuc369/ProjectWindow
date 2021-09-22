@@ -147,20 +147,26 @@ namespace ShopPet.DataAccessLayer
             }
         }
 
-        //public List<ProductDTO> GetNumOfPets(string name)
-        //{
-        //    using (var dbcontext = new ShopPetModels())
-        //    {
-        //        List<ProductDTO> l = dbcontext.Products.Where(n => n.ProName == name).ToList();
-        //        int count = (int)dbcontext.Products.Where(n => n.ProName == name).Sum(n => n.ProQty);
-        //        var ProductDTO = from b in dbcontext.Products
-        //                         select new ProductDTO()
-        //                         {
-        //                             Quanlity = count,
-        //                         };
-        //        return ProductDTO.ToList();
-        //    }
-
-        //}
+        public List<ProductDTO> GetNumOfPets(string name)
+        {
+            using (var dbcontext = new ShopPetModels())
+            {
+                int sum;
+                if (dbcontext.Products.Any(n => n.ProCate == name))
+                {
+                    sum = dbcontext.Products.Where(n => n.ProCate == name).Sum(s => s.ProQty);                  
+                }
+                else
+                {
+                    sum = 0;
+                }
+                var ProductDTO = from b in dbcontext.Products
+                                 select new ProductDTO()
+                                 {
+                                     Quanlity = sum,
+                                 };
+                return ProductDTO.ToList();
+            }
+        }
     }
 }
