@@ -20,6 +20,7 @@ namespace ShopPet.DataAccessLayer
                                      ID = b.ProId,
                                      Name = b.ProName,
                                      Category = b.ProCate,
+                                     Description = b.ProDes,
                                      Quanlity = b.ProQty,
                                      Price = b.ProPrice
                                  };
@@ -43,6 +44,8 @@ namespace ShopPet.DataAccessLayer
                     }
                     Update.ProName = product.ProName;
                     Update.ProCate = product.ProCate;
+                    Update.ProDes = product.ProDes;
+                    Update.ProImg = product.ProImg;
                     Update.ProQty = product.ProQty;
                     Update.ProPrice = product.ProPrice;
                     dbcontext.SaveChanges();
@@ -167,6 +170,21 @@ namespace ShopPet.DataAccessLayer
                                  };
                 return ProductDTO.ToList();
             }
+        }
+
+        public List<ImageDTO> GetImg(int id)
+        {
+            using (var dbcontext = new ShopPetModels())
+            {
+                byte[] p = dbcontext.Products.Where(tk => tk.ProId == id).Select(i => i.ProImg).FirstOrDefault();
+                var ImageDTO = from b in dbcontext.Products
+                               select new ImageDTO()
+                                  {
+                                      Img = p
+                                  };
+                return ImageDTO.ToList();
+            }
+
         }
     }
 }

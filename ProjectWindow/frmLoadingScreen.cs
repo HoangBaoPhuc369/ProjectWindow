@@ -32,9 +32,10 @@ namespace ProjectWindow
             if (gunaProgressBar1.Value == 100)
             {
                 gunaProgressBar1.Value = 0;
-                Thread thread = new Thread(new ThreadStart(ShowFormLogin)); //Tạo luồng mới
-                thread.Start(); //Khởi chạy luồng
-                this.Close(); //đóng Form hiện tại
+                ShowFormLogin();
+                //Thread thread = new Thread(new ThreadStart(ShowFormLogin)); //Tạo luồng mới
+                //thread.Start(); //Khởi chạy luồng
+                this.Hide(); //đóng Form hiện tại
                 timer1.Stop();
             }
         }
@@ -42,7 +43,7 @@ namespace ProjectWindow
         private void ShowFormLogin()
         {
             frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
+            frmLogin.Show();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,9 +73,19 @@ namespace ProjectWindow
             DataGridViewRow row = dgvProductList.SelectedRows[0];
 
             ID = int.Parse(row.Cells[0].Value.ToString());
-            txtProName.Text = row.Cells[1].Value.ToString();
+            lblProName.Text = row.Cells[1].Value.ToString();
+            lblCategory.Text = row.Cells[2].Value.ToString();
             Cate = row.Cells[2].Value.ToString();
-            txtPrice.Text = row.Cells[4].Value.ToString();
+            txtDescription.Text = row.Cells[3].Value.ToString();
+            lblPrice.Text = row.Cells[5].Value.ToString();
+            byte[] getImg;
+            List<ImageDTO> list = _productBAL.GetImg(int.Parse(row.Cells[0].Value.ToString()));
+            foreach (var item in list)
+            {
+                getImg = item.Img;
+                pctBoxPet.Image = ByteToImg(getImg);
+                break;
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -84,21 +95,21 @@ namespace ProjectWindow
         double TotalPrice = 0;
         private void btnAddToBill_Click(object sender, EventArgs e)
         {
-            if (cbbCustomer.SelectedIndex != -1 && txtPrice.Text != "" && 
-                txtQuanlity.Text != "" && txtProName.Text != "")
+            if (cbbCustomer.SelectedIndex != -1 && lblPrice.Text != "" &&
+                txtQuanlity.Text != "" && lblProName.Text != "")
             {
                 //Lấy row hiện tại
                 DataGridViewRow row = dgvProductList.SelectedRows[0];
-                int check = int.Parse(row.Cells[3].Value.ToString());
+                int check = int.Parse(row.Cells[4].Value.ToString());
                 if (int.Parse(txtQuanlity.Text) <= check)
                 {
-                    double totalPrice = int.Parse(txtQuanlity.Text) * double.Parse(txtPrice.Text);
+                    double totalPrice = int.Parse(txtQuanlity.Text) * double.Parse(lblPrice.Text);
                     int selectedRow = dgvDetails.Rows.Add();
                     dgvDetails.Rows[selectedRow].Cells[0].Value = ID;
-                    dgvDetails.Rows[selectedRow].Cells[1].Value = txtProName.Text;
+                    dgvDetails.Rows[selectedRow].Cells[1].Value = lblProName.Text;
                     dgvDetails.Rows[selectedRow].Cells[2].Value = Cate;
                     dgvDetails.Rows[selectedRow].Cells[3].Value = int.Parse(txtQuanlity.Text);
-                    dgvDetails.Rows[selectedRow].Cells[4].Value = double.Parse(txtPrice.Text);
+                    dgvDetails.Rows[selectedRow].Cells[4].Value = double.Parse(lblPrice.Text);
                     dgvDetails.Rows[selectedRow].Cells[5].Value = totalPrice;
 
                     double sum = 0;
@@ -168,7 +179,7 @@ namespace ProjectWindow
                     {
                         if (int.Parse(item.Cells[0].Value.ToString()) == product.ProId)
                         {
-                            checkQuanlity = int.Parse(item.Cells[3].Value.ToString());
+                            checkQuanlity = int.Parse(item.Cells[4].Value.ToString());
                         }
                     }
                     //Lấy số lượng của sản phẩm trừ số lượng mua của khách hàng
@@ -210,9 +221,12 @@ namespace ProjectWindow
         public void Clear()
         {
             cbbCustomer.SelectedIndex = -1;
-            txtProName.Text = "";
+            lblProName.Text = "";
             txtQuanlity.Text = "";
-            txtPrice.Text = "";
+            lblPrice.Text = "";
+            lblCategory.Text = "";
+            txtDescription.Text = "";
+            pctBoxPet.Image = null;
             dgvProductList.ClearSelection();
             dgvDetails.DataSource = null;
             dgvDetails.Rows.Clear();
@@ -238,6 +252,14 @@ namespace ProjectWindow
                 }             
             }
             return false;
+        }
+        private Image ByteToImg(byte[] byteString)
+        {
+            byte[] imgBytes = byteString;
+            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+            ms.Write(imgBytes, 0, imgBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
         }
     }
 }

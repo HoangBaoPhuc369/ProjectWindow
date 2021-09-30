@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,6 @@ namespace ProjectWindow
     {
         private readonly ProductBAL _productBAL;
         int ID;
-        //string namePets;
         public frmProduct()
         {
             InitializeComponent();
@@ -45,15 +45,18 @@ namespace ProjectWindow
             dgvProduct.DataSource = list;
             dgvProduct.ClearSelection();
         }
-
+ 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "" && cbbCategory.SelectedIndex != -1 && txtQuanlity.Text != "" && txtPrice.Text != "")
+            if (txtName.Text != "" && cbbCategory.SelectedIndex != -1 && txtQuanlity.Text != "" 
+                && txtPrice.Text != "" && txtDescription.Text != "" && pctBoxPet.Image != null)
             {
                 string error;
                 Product product = new Product();
                 product.ProName = txtName.Text;
                 product.ProCate = cbbCategory.Text;
+                product.ProDes = txtDescription.Text;
+                product.ProImg = ImageToByteArray(pctBoxPet.Image);
                 product.ProQty = int.Parse(txtQuanlity.Text);
                 product.ProPrice = double.Parse(txtPrice.Text);
 
@@ -91,6 +94,8 @@ namespace ProjectWindow
                 product.ProId = Id;
                 product.ProName = txtName.Text;
                 product.ProCate = cbbCategory.Text;
+                product.ProDes = txtDescription.Text;
+                product.ProImg = ImageToByteArray(pctBoxPet.Image);
                 product.ProQty = int.Parse(txtQuanlity.Text);
                 product.ProPrice = double.Parse(txtPrice.Text);
                 if (_productBAL.SaveProduct(product, out error))
@@ -141,6 +146,8 @@ namespace ProjectWindow
             txtName.Text = "";
             txtQuanlity.Text = "";
             cbbCategory.SelectedIndex = -1;
+            txtDescription.Text = "";
+            pctBoxPet.Image = null;
             txtQuanlity.Text = "";
             txtPrice.Text = "";
             dgvProduct.ClearSelection();
@@ -153,29 +160,59 @@ namespace ProjectWindow
             ID = int.Parse(row.Cells[0].Value.ToString());
             txtName.Text = row.Cells[1].Value.ToString();
             cbbCategory.Text = row.Cells[2].Value.ToString();
-            txtQuanlity.Text = row.Cells[3].Value.ToString();
-            txtPrice.Text = row.Cells[4].Value.ToString();
+            txtDescription.Text = row.Cells[3].Value.ToString();
+            txtQuanlity.Text = row.Cells[4].Value.ToString();
+            txtPrice.Text = row.Cells[5].Value.ToString();
+            byte[] getImg;
+            List<ImageDTO> list = _productBAL.GetImg(int.Parse(row.Cells[0].Value.ToString()));
+            foreach (var item in list)
+            {
+                getImg = item.Img;              
+                pctBoxPet.Image = ByteToImg(getImg);
+                break;
+            }
         }
 
         private void gunaCircleButton1_Click(object sender, EventArgs e)
         {
             Clear();
         }
+  
+        private void btnChooseIMG_Click(object sender, EventArgs e)
+        {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files(*.jbg)|*.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    pctBoxPet.ImageLocation = imageLocation;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
 
-        //public void CheckNumOfPet()
-        //{
-        //    int sum = 0;
-        //    for (int i = 0; i < dgvProduct.Rows.Count; i++)
-        //    {
-        //        foreach (DataGridViewRow item in dgvProduct.Rows)
-        //        {
-        //            if (item.Cells[2].Value.ToString() == "Dog")
-        //            {
-        //                sum = int.Parse(dgvProduct.Rows[i].Cells[3].Value.ToString());
-        //            }
-        //        }
-        //        GetNumOfPets.Dogs += sum.ToString();
-        //    }            
-        //}
+        private Image ByteToImg(byte[] byteString)
+        {
+            byte[] imgBytes = byteString;
+            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+            ms.Write(imgBytes, 0, imgBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
     }
 }

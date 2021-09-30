@@ -37,6 +37,10 @@ namespace ProjectWindow
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.pctBoxPet = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnChooseIMG = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.txtDescription = new Guna.UI.WinForms.GunaTextBox();
             this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.cbbCategory = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
@@ -53,7 +57,10 @@ namespace ProjectWindow
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.dgvProduct = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.gunaPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +72,10 @@ namespace ProjectWindow
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
+            this.gunaPanel2.Controls.Add(this.pctBoxPet);
+            this.gunaPanel2.Controls.Add(this.btnChooseIMG);
+            this.gunaPanel2.Controls.Add(this.gunaLabel6);
+            this.gunaPanel2.Controls.Add(this.txtDescription);
             this.gunaPanel2.Controls.Add(this.gunaCircleButton1);
             this.gunaPanel2.Controls.Add(this.cbbCategory);
             this.gunaPanel2.Controls.Add(this.gunaLabel5);
@@ -81,8 +92,77 @@ namespace ProjectWindow
             this.gunaPanel2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaPanel2.Location = new System.Drawing.Point(41, 15);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(802, 191);
+            this.gunaPanel2.Size = new System.Drawing.Size(802, 253);
             this.gunaPanel2.TabIndex = 24;
+            // 
+            // pctBoxPet
+            // 
+            this.pctBoxPet.Location = new System.Drawing.Point(613, 55);
+            this.pctBoxPet.Name = "pctBoxPet";
+            this.pctBoxPet.ShadowDecoration.Parent = this.pctBoxPet;
+            this.pctBoxPet.Size = new System.Drawing.Size(156, 133);
+            this.pctBoxPet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxPet.TabIndex = 35;
+            this.pctBoxPet.TabStop = false;
+            // 
+            // btnChooseIMG
+            // 
+            this.btnChooseIMG.AnimationHoverSpeed = 0.07F;
+            this.btnChooseIMG.AnimationSpeed = 0.03F;
+            this.btnChooseIMG.BackColor = System.Drawing.Color.Transparent;
+            this.btnChooseIMG.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(249)))), ((int)(((byte)(215)))));
+            this.btnChooseIMG.BorderColor = System.Drawing.Color.Cyan;
+            this.btnChooseIMG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChooseIMG.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChooseIMG.FocusedColor = System.Drawing.Color.Empty;
+            this.btnChooseIMG.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseIMG.ForeColor = System.Drawing.Color.Gray;
+            this.btnChooseIMG.Image = null;
+            this.btnChooseIMG.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnChooseIMG.Location = new System.Drawing.Point(670, 194);
+            this.btnChooseIMG.Name = "btnChooseIMG";
+            this.btnChooseIMG.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
+            this.btnChooseIMG.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnChooseIMG.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnChooseIMG.OnHoverImage = null;
+            this.btnChooseIMG.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnChooseIMG.Radius = 10;
+            this.btnChooseIMG.Size = new System.Drawing.Size(99, 24);
+            this.btnChooseIMG.TabIndex = 33;
+            this.btnChooseIMG.Text = "Choose image";
+            this.btnChooseIMG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChooseIMG.Click += new System.EventHandler(this.btnChooseIMG_Click);
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.ForeColor = System.Drawing.Color.Gray;
+            this.gunaLabel6.Location = new System.Drawing.Point(434, 55);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(97, 21);
+            this.gunaLabel6.TabIndex = 32;
+            this.gunaLabel6.Text = "Description";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.Transparent;
+            this.txtDescription.BaseColor = System.Drawing.Color.White;
+            this.txtDescription.BorderColor = System.Drawing.Color.Silver;
+            this.txtDescription.BorderSize = 1;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtDescription.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDescription.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtDescription.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(438, 82);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.Radius = 10;
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.Size = new System.Drawing.Size(150, 106);
+            this.txtDescription.TabIndex = 31;
             // 
             // gunaCircleButton1
             // 
@@ -96,7 +176,7 @@ namespace ProjectWindow
             this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
             this.gunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCircleButton1.Image")));
             this.gunaCircleButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(10, 142);
+            this.gunaCircleButton1.Location = new System.Drawing.Point(10, 202);
             this.gunaCircleButton1.Name = "gunaCircleButton1";
             this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -116,7 +196,7 @@ namespace ProjectWindow
             this.cbbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCategory.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbCategory.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCategory.ForeColor = System.Drawing.Color.Black;
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Items.AddRange(new object[] {
@@ -124,12 +204,12 @@ namespace ProjectWindow
             "Cat",
             "Hamster",
             "Food"});
-            this.cbbCategory.Location = new System.Drawing.Point(241, 94);
+            this.cbbCategory.Location = new System.Drawing.Point(78, 161);
             this.cbbCategory.Name = "cbbCategory";
             this.cbbCategory.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cbbCategory.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cbbCategory.Radius = 10;
-            this.cbbCategory.Size = new System.Drawing.Size(141, 26);
+            this.cbbCategory.Size = new System.Drawing.Size(141, 27);
             this.cbbCategory.TabIndex = 28;
             // 
             // gunaLabel5
@@ -137,7 +217,7 @@ namespace ProjectWindow
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel5.Location = new System.Drawing.Point(628, 64);
+            this.gunaLabel5.Location = new System.Drawing.Point(264, 132);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(49, 21);
             this.gunaLabel5.TabIndex = 27;
@@ -154,7 +234,7 @@ namespace ProjectWindow
             this.txtPrice.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtPrice.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPrice.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(628, 91);
+            this.txtPrice.Location = new System.Drawing.Point(264, 159);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.Radius = 10;
@@ -167,11 +247,11 @@ namespace ProjectWindow
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel4.Location = new System.Drawing.Point(437, 64);
+            this.gunaLabel4.Location = new System.Drawing.Point(260, 55);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(75, 21);
+            this.gunaLabel4.Size = new System.Drawing.Size(76, 21);
             this.gunaLabel4.TabIndex = 25;
-            this.gunaLabel4.Text = "Quanlity";
+            this.gunaLabel4.Text = "Quantity";
             // 
             // txtQuanlity
             // 
@@ -184,7 +264,7 @@ namespace ProjectWindow
             this.txtQuanlity.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtQuanlity.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtQuanlity.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuanlity.Location = new System.Drawing.Point(441, 91);
+            this.txtQuanlity.Location = new System.Drawing.Point(264, 82);
             this.txtQuanlity.Name = "txtQuanlity";
             this.txtQuanlity.PasswordChar = '\0';
             this.txtQuanlity.Radius = 10;
@@ -197,7 +277,7 @@ namespace ProjectWindow
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel3.Location = new System.Drawing.Point(237, 64);
+            this.gunaLabel3.Location = new System.Drawing.Point(74, 132);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(77, 21);
             this.gunaLabel3.TabIndex = 23;
@@ -217,7 +297,7 @@ namespace ProjectWindow
             this.btnDelete.ForeColor = System.Drawing.Color.Gray;
             this.btnDelete.Image = null;
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(503, 142);
+            this.btnDelete.Location = new System.Drawing.Point(496, 205);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -245,7 +325,7 @@ namespace ProjectWindow
             this.btnEdit.ForeColor = System.Drawing.Color.Gray;
             this.btnEdit.Image = null;
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEdit.Location = new System.Drawing.Point(346, 142);
+            this.btnEdit.Location = new System.Drawing.Point(339, 205);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -273,7 +353,7 @@ namespace ProjectWindow
             this.btnSave.ForeColor = System.Drawing.Color.Gray;
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(190, 142);
+            this.btnSave.Location = new System.Drawing.Point(183, 205);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(224)))), ((int)(((byte)(207)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -292,7 +372,7 @@ namespace ProjectWindow
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel2.Location = new System.Drawing.Point(43, 64);
+            this.gunaLabel2.Location = new System.Drawing.Point(74, 55);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(55, 21);
             this.gunaLabel2.TabIndex = 9;
@@ -309,7 +389,7 @@ namespace ProjectWindow
             this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(43, 91);
+            this.txtName.Location = new System.Drawing.Point(74, 82);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.Radius = 10;
@@ -362,7 +442,7 @@ namespace ProjectWindow
             this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.EnableHeadersVisualStyles = false;
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
-            this.dgvProduct.Location = new System.Drawing.Point(41, 250);
+            this.dgvProduct.Location = new System.Drawing.Point(41, 312);
             this.dgvProduct.Name = "dgvProduct";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -374,7 +454,7 @@ namespace ProjectWindow
             this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(802, 318);
+            this.dgvProduct.Size = new System.Drawing.Size(802, 256);
             this.dgvProduct.TabIndex = 25;
             this.dgvProduct.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.LightBlue;
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
@@ -406,11 +486,21 @@ namespace ProjectWindow
             this.gunaLabel7.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel7.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel7.ForeColor = System.Drawing.Color.Gray;
-            this.gunaLabel7.Location = new System.Drawing.Point(370, 209);
+            this.gunaLabel7.Location = new System.Drawing.Point(371, 271);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(176, 38);
             this.gunaLabel7.TabIndex = 26;
             this.gunaLabel7.Text = "Product List";
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.pctBoxPet;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.TargetControl = this.dgvProduct;
             // 
             // frmProduct
             // 
@@ -426,6 +516,7 @@ namespace ProjectWindow
             this.Text = "frmProduct";
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxPet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -452,5 +543,11 @@ namespace ProjectWindow
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaComboBox cbbCategory;
         private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
+        private Guna.UI.WinForms.GunaButton btnChooseIMG;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI.WinForms.GunaTextBox txtDescription;
+        private Guna.UI2.WinForms.Guna2PictureBox pctBoxPet;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }

@@ -23,5 +23,11 @@ namespace ShopPet.DataAccessLayer.Entities
         public double ProPrice { get; set; }
 
         public int ProQty { get; set; }
+
+        [StringLength(50)]
+        public string ProDes { get; set; }
+
+        [Column(TypeName = "image")]
+        public byte[] ProImg { get; set; }
     }
 }

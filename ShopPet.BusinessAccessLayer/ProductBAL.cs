@@ -110,5 +110,10 @@ namespace ShopPet.BusinessAccessLayer
         {
             return _productDAL.GetNumOfPets(name);
         }
+
+        public List<ImageDTO> GetImg(int id)
+        {
+            return _productDAL.GetImg(id);
+        }
     }
 }
